@@ -1,1 +1,11 @@
-style 
+body {
+  font-family: sans-serif;
+}
+.pagetitle {
+  text-align: center;
+  background-color: aquamarine;
+}
+.credits {
+  float: right;
+  font-style: italic;
+}
