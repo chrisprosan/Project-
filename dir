@@ -1,0 +1,42 @@
+[33mcommit 1816a381efa8a081d939650bf7aa14d7dd03d8b8[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Mark Keeble <markkeeble14@gmail.com>
+Date:   Thu Oct 10 10:53:23 2019 -0700
+
+    creating conflict
+
+[33mcommit 2a18224ab79b478883a24b510d087fb05d918f1b[m
+Merge: 6a38860 0770daf
+Author: Mark Keeble <markkeeble14@gmail.com>
+Date:   Thu Oct 10 10:46:24 2019 -0700
+
+    Merge branch 'master' of https://github.com/chrisprosan/Project-
+
+[33mcommit 6a388603481178bedc93e3b1d69ae920322bb459[m
+Author: Mark Keeble <markkeeble14@gmail.com>
+Date:   Thu Oct 10 10:46:10 2019 -0700
+
+    adding superior navbar and file changes
+
+[33mcommit ff3a9b6b11e9ade6f38c62e941603c0ef298cee5[m
+Author: Mark Keeble <markkeeble14@gmail.com>
+Date:   Thu Oct 10 10:32:29 2019 -0700
+
+    saved index.html this time
+
+[33mcommit 5024f753c91777c97e8844bec03dcc589531e126[m
+Author: Mark Keeble <markkeeble14@gmail.com>
+Date:   Thu Oct 10 10:30:57 2019 -0700
+
+    changed index.html
+
+[33mcommit ae1d362467e7bb128c26c255ba1cede4b10a4866[m
+Author: Mark Keeble <markkeeble14@gmail.com>
+Date:   Thu Oct 10 10:12:09 2019 -0700
+
+    added .gitignore file with .DS_Store exception and readme.txt
+
+[33mcommit bd0e822903173ecb07ff3f4a64cd068bce6f6193[m
+Author: Mark Keeble <markkeeble14@gmail.com>
+Date:   Thu Oct 10 10:05:04 2019 -0700
+
+    Added superior landing page as well as budgets.html page
