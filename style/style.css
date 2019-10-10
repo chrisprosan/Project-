@@ -5,26 +5,30 @@ body {
 }
 
 .navbar {
-        margin-left: -25px;
+  margin-left: -25px;
         
-        background-color: gray;
-        display: grid;
+  background-color: gray;
+  display: grid;
         
-        grid-template-columns: 50% 50%;
-      }
+  grid-template-columns: 50% 50%;
+}
     
-      .navbaritem {
-        grid-column: auto;
+.navbaritem {
+  grid-column: auto;
         
-        display: block;
-        text-align: center;
+  display: block;
+  text-align: center;
         
-        padding: 0.5vw;
-        padding-left: 1vw;
+  padding: 0.5vw;
+  padding-left: 1vw;
         
-        float: left;
-      }
+  float: left;
+}
       
-      ul {
-        list-style: none;
-      }
+ul {
+  list-style: none;
+}
+
+li a:hover {
+  color: red;
+}
