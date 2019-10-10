@@ -1,6 +1,7 @@
 .pagetitle {
   text-align: center;
-  background-color: aquamarine;
+  background-color: bisque;
+  font-size: 30pt;
 }
 .credits {
   float: right;
