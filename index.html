@@ -4,12 +4,60 @@
     <meta charset="utf-8">
     
     <title>Index</title>
+    
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      
+      .navbar {
+        margin-left: -25px;
+        
+        background-color: gray;
+        display: grid;
+        
+        grid-template-columns: 50% 50%;
+      }
+    
+      .navbaritem {
+        grid-column: auto;
+        
+        display: block;
+        text-align: center;
+        
+        padding: 0.5vw;
+        padding-left: 1vw;
+        
+        float: left;
+      }
+      
+      ul {
+        list-style: none;
+      }
+      
+      .header {
+        text-align: center;
+      }
+      
+      .credits {
+        float: right;
+      }
+      
+    </style>
   </head>
   
   <body>
     <div>
-      <h1>Welcome to the Landing Page of Project $</h1>
-      <p>Hello from Mark Keeble</p>
+      <div class="navbar">
+        <ul>
+          <li class="navbaritem"><a href="budgets.html">Create a Budget</a></li>
+          <li class="navbaritem"><a href="">Add an expense</a></li>
+        </ul>
+      </div>
+      
+      <h1 class="header">Welcome to the Landing Page of Project $</h1>
+      <p class="credits">Hello from Mark Keeble</p>
     </div>
   </body>
   
