@@ -1,3 +1,95 @@
+body, html {
+  margin: 0px;
+  padding: 0px;
+
+  font-size: 1.3em;
+}
+
+.header {
+  text-align: center;
+}
+
+.credits {
+  float: right;
+}
+
+#header {
+  background-color: black;
+  border: 1px solid black;
+}
+
+#backgroundBar {
+  background-color: lightgray;
+  height: 50%;
+  width: 100vw;
+  border: 1px solid black;
+}
+
+#logo {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  border: 1px solid black;
+  background-color: gray;
+
+  transform: translate(30%, 30%);
+}
+
+.navItem {
+  float: right;
+}
+
+.navItem {
+  font-size: 1.2em;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform: translate(9px, 12.5px);
+}
+
+.navItemOutside {
+  float: right;
+
+  width: 250px;
+  height: 60px;
+
+  /*clip-path: polygon(24% 0%, 100% 0%, 76% 100%, 0% 100%);*/
+  clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 25% 100%);
+  background-color: white;
+
+  text-align: center;
+
+  position: fixed;
+  transform: translate(-25px, -25px);
+}
+
+.navItemInside {
+  padding: 3%;
+  margin-top: -3%;
+  margin-right: -70px;
+
+  float: right;
+
+  align-content: center;
+
+  width: 200px;
+  height: 10px;
+
+  /*clip-path: polygon(24% 0%, 100% 0%, 76% 100%, 0% 100%);*/
+  clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 25% 100%);
+  background-color: black;
+}
+
+#welcomeText {
+  margin-right: 5%;
+  float: right;
+  font-size: 1.5em;
+}
+
+.moveRight {
+  margin-right: 3%;
+}
+
 .header {
     margin-top: 8%;
     font-size: 5em;

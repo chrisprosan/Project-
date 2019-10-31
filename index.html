@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Index</title>
+  <title>Landing Page</title>
   <link type="text/css" rel="stylesheet" href="./style/style.css">
   <link type="text/css" rel="stylesheet" href="./style/landing-page.css">
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
@@ -19,17 +19,30 @@
         <div id="logo"></div>
       </div>
     </div>
-    <ul id="navBar">
-      <li class="navItem">Home</li>
-      <li class="navItem" id="random1" style="margin-right: 3%;">Expenses</li>
-      <li class="navItem" style="margin-right: 3%;">Budgets</li>
-    </ul>
+        <ul id="navBar">
+          <div class="navItemInside">
+            <div class="navItemOutside">
+              <li class="navItem"><a>Home</a></li>
+            </div>
+          </div>
+          <div class="navItemInside">
+            <div class="navItemOutside">
+              <li class="navItem moveRight"><a>Expenses</a></li>
+            </div>
+          </div>
+          <div class="navItemInside">
+            <div class="navItemOutside">
+              <li class="navItem moveRight" "><a>Budgets</a></li>
+          </div>
+        </div>
+      </ul>
+    </div>
+  
     <div class="bigbutton">
       <img src="./images/big-button.png" alt="my-budgets">
       <div class="buttontext">
         MY BUDGETS
       </div>
-
     </div>
     <div class="bigbutton">
       <img src="./images/big-button.png" alt="my-expenses">
