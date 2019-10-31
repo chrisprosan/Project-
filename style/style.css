@@ -1,34 +1,7 @@
 body {
-  font-family: fantasy;
+
+  font-family: serif;
+  font-size: 15pt;
   margin: 0 auto;
   padding: 0 auto;
-}
-
-.navbar {
-  margin-left: -25px;
-        
-  background-color: gray;
-  display: grid;
-        
-  grid-template-columns: 50% 50%;
-}
-    
-.navbaritem {
-  grid-column: auto;
-        
-  display: block;
-  text-align: center;
-        
-  padding: 0.5vw;
-  padding-left: 1vw;
-        
-  float: left;
-}
-      
-ul {
-  list-style: none;
-}
-
-li a:hover {
-  color: red;
 }

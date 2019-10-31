@@ -1,35 +1,48 @@
-<!DOCTYPE html> 
-<html lang = "en">
-  <head>
-    <meta charset="utf-8">
-    
-    <title>Index</title>
-    <link rel="stylesheet" href="style/style.css">
-    <style>
-      .header {
-        text-align: center;
-      }
-      
-      .credits {
-        float: right;
-      }
-      
-    </style>
-  </head>
-  
-  <body>
-    <div>
-      <div class="navbar">
-        <ul>  
-          <li class="navbaritem"><a href="index.html">Home</a></li>
-          <li class="navbaritem"><a href="budgets.html">Create a Budget</a></li>
-          <li class="navbaritem"><a href="expenses.html">Add an expense</a></li>
-        </ul>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Index</title>
+  <link type="text/css" rel="stylesheet" href="./style/style.css">
+  <link type="text/css" rel="stylesheet" href="./style/landing-page.css">
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+  <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="header">
+      <div id="backgroundBar">
+        <p id="welcomeText"> Welcome, [Username] </p>
+        <div id="logo"></div>
       </div>
-      
-      <h1 class="header">Welcome to the Landing Page of Project $</h1>
-      <p class="credits">Hello from Mark Keeble and Chris Khoan</p>
     </div>
-  </body>
-  
+    <ul id="navBar">
+      <li class="navItem">Home</li>
+      <li class="navItem" id="random1" style="margin-right: 3%;">Expenses</li>
+      <li class="navItem" style="margin-right: 3%;">Budgets</li>
+    </ul>
+    <div class="bigbutton">
+      <img src="./images/big-button.png" alt="my-budgets">
+      <div class="buttontext">
+        MY BUDGETS
+      </div>
+
+    </div>
+    <div class="bigbutton">
+      <img src="./images/big-button.png" alt="my-expenses">
+      <div class="buttontext">
+        MY EXPENSES
+      </div>
+    </div>
+    <div class="advice">
+      Did you know [...]
+    </div>
+  </div>
+  <div class="container">
+  </div>
+</body>
+
 </html>
