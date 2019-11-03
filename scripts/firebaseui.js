@@ -1,18 +1,3 @@
-// Your web app's Firebase configuration
-
-// Your web app's Firebase configuration
-var firebaseConfig = {
-    apiKey: "AIzaSyAKIQ82Oqhr_IRKYJYcss8QGEg8DEtHNWQ",
-    authDomain: "project-20db7.firebaseapp.com",
-    databaseURL: "https://project-20db7.firebaseio.com",
-    projectId: "project-20db7",
-    storageBucket: "project-20db7.appspot.com",
-    messagingSenderId: "1098873986764",
-    appId: "1:1098873986764:web:7c10c3743c29ee7c1e6c69"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-
 // Initialize the FirebaseUI Widget using Firebase.
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
@@ -32,7 +17,7 @@ var uiConfig = {
     },
     // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
     signInFlow: 'popup',
-    signInSuccessUrl: '<main.html>',
+    signInSuccessUrl: 'index.html',
     signInOptions: [
         // Leave the lines as is for the providers you want to offer your users.
         // firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -43,9 +28,9 @@ var uiConfig = {
         // firebase.auth.PhoneAuthProvider.PROVIDER_ID
     ],
     // Terms of service url.
-    tosUrl: '<main.html>',
+    tosUrl: 'index.html',
     // Privacy policy url.
-    privacyPolicyUrl: '<main.hmtl>'
+    privacyPolicyUrl: 'index.html'
 };
 // The start method will wait until the DOM is loaded.
 ui.start('#firebaseui-auth-container', uiConfig);
