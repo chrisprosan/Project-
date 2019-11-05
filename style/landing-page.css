@@ -1,8 +1,13 @@
-body, html {
+body {
   margin: 0px;
   padding: 0px;
 
   font-size: 1.3em;
+
+  display: grid;
+
+  grid-template-columns: auto;
+  grid-template-rows: auto auto 80vh;
 }
 
 .credits {
@@ -124,4 +129,14 @@ body, html {
     text-align: center;
     font-size: 1.6em;
     margin-top: 15%;
+}
+
+#footer {
+  width: 100%;
+  height: 10%;
+  background-color: gray;
+  border: 1px solid black;
+
+  position: fixed;
+  transform: translateY(95vh);
 }
