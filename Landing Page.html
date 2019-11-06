@@ -10,12 +10,24 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <script src="./scripts/firebaseui.js"></script>
-    <style>
+      
+      <style>
+      @import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Lobster|Roboto|Staatliches|Teko&display=swap');
+      
+      /*
+      font-family: 'Roboto', sans-serif;
+      font-family: 'Staatliches', cursive;
+      font-family: 'Josefin Sans', sans-serif;
+      font-family: 'Lobster', cursive;
+      font-family: 'Teko', sans-serif;
+      */
+      
         body {
+            font-family: 'Roboto', sans-serif;
             margin: 0px;
             padding: 0px;
             font-size: 2em;
-            background: linear-gradient(to bottom, #0400FF, #000000) fixed;
+            background: linear-gradient(to bottom, blue, #710cFF) fixed;
             border: 1px solid black;
         }
         
@@ -41,10 +53,6 @@
 
         #content {}
 
-        #navBar {
-            display: grid;
-        }
-
         .topImg {
             height: 18vw;
         }
@@ -54,13 +62,15 @@
         }
 
         #welcomeText {
-            font-size: 2em;
+            font-size: 4em;
             text-align: center;
             vertical-align: middle;
             color: #FFFFFF;
             padding: 0px;
             margin: 0px;
             margin-top: 6%;
+          
+          font-family: 'Josefin Sans', sans-serif;
         }
 
         #tipText {
@@ -71,6 +81,8 @@
             padding: 1%;
             padding-bottom: 5%;
             margin: 1%;
+          
+          font-family: 'Josefin Sans', sans-serif;
         }
 
         #contentPane {
@@ -99,6 +111,8 @@
             align-content: center;
             margin: 0px;
             padding: 0px;
+          font-size: 2.2em;
+          font-family: 'Teko', sans-serif;
         }
 
         #rightSide {
@@ -136,7 +150,7 @@
         
         nav a {
           display: block;
-            font-size: 1.2em;
+            font-size: 1.75em;
             color: black;
             float: left;
             padding: 2%;
@@ -150,10 +164,12 @@
         }
       
       .navigation {
+        font-size: 1.2em;
         display: grid;
         grid-template-columns: auto auto auto;
         text-align: center;
         vertical-align: center;
+        font-family: 'Josefin Sans', sans-serif;
         
       }
       
