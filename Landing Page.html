@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            font-size: 2em;
+            background: linear-gradient(to bottom, #0400D2, #000000) fixed;
+        }
+        
+        #filter1 {
+            background: linear-gradient(to bottom, #0400D2, #FFFFFF) fixed;
+        }
+        
+        #filter2 {
+            background: linear-gradient(to bottom, #000000, #FFFFFF) fixed;
+        }
+        
+        #container {
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto;
+            background-image: url(images/MP3_Skepta-Pure_Water_Single_2018_iTunes_Plus_AAC_M4A.jpg);
+            background-size: cover;
+        }
+        
+        .floatLeft {
+            float: left;
+            padding: 2%;
+        }
+        
+        .floatRight {
+            float: right;
+            padding: 3%;
+        }
+        
+        #topBar {}
+        
+        #content {}
+        
+        #navBar {
+            display: grid;
+        }
+        
+        .topImg {
+            height: 100px;
+        }
+        
+        .blacken {
+            filter: brightness(0);
+        }
+        
+        #welcomeText {
+            font-size: 2em;
+            text-align: center;
+            padding: 0px;
+            margin: 0px;
+        }
+        
+        #tipText {
+            font-size: 1.5em;
+            text-align: center;
+            padding: 1%;
+            padding-bottom: 5%;
+            margin: 1%;
+        }
+        
+        #contentPane {
+            background-color: white;
+            border: 2px solid black;
+            padding: 0px;
+            min-height: 70vh;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+        
+        #selector {
+            display: grid;
+            grid-template-columns: auto 3% auto;
+            grid-template-rows: auto;
+            margin: 0px;
+            padding: 0px;
+            background-color: #0500FF;
+            height: 100%;
+        }
+        
+        .selector {
+            background-color: black;
+            border: 2px solid white;
+            color: white;
+            height: 100px;
+            align-content: center;
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        #rightSide {
+            margin-right: 10%;
+            margin-bottom: 5%;
+            margin-top: 5%;
+        }
+        
+        #leftSide {
+            margin-left: 10%;
+            margin-bottom: 5%;
+            margin-top: 5%;
+        }
+        
+        .middle {
+            font-size: 1.5em;
+            text-align: center;
+            transform: translateY(-40%);
+        }
+        
+        #blue {
+            background-color: #0500FF;
+            box-shadow: 5px 5px black;
+        }
+        
+        #blueFilter {
+            background-color: #0055FF;
+            filter: opacity(70%);
+            display: grid;
+            grid-template-rows: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="blueFilter">
+            <div id="topBar">
+                <img src="images/ACF-logo-placeholder.png" class="floatLeft topImg">
+                <img src="images/Icon-04-512.png" class="floatRight topImg blacken">
+                <img src="images/Menu-512.png" class="floatRight topImg">
+            </div>
+            <div id="navBar">
+
+            </div>
+            <p id="welcomeText">Welcome</p>
+            <p id="tipText">Tip</p>
+        </div>
+    </div>
+
+    <div id="content">
+        <div id="blue">
+            <div id="selector">
+                <div class="floatLeft selector" id="leftSide">
+                    <p class="middle">Budgets</p>
+                </div>
+                <div></div>
+                <div class="floatLeft selector" id="rightSide">
+                    <p class="middle">Expenses</p>
+                </div>
+            </div>
+        </div>
+        <div id="contentPane"></div>
+    </div>
+</body>
+
+</html>
