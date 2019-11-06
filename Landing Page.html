@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <style>
@@ -16,11 +17,11 @@
             background: linear-gradient(to bottom, #0400D2, #000000) fixed;
             border: 1px solid black;
         }
-        
+
         #filter1 {
             background: linear-gradient(to bottom, #0400D2, #FFFFFF) fixed;
         }
-        
+
         #filter2 {
             background: linear-gradient(to bottom, #000000, #FFFFFF) fixed;
         }
@@ -32,33 +33,33 @@
             background-image: url(images/MP3_Skepta-Pure_Water_Single_2018_iTunes_Plus_AAC_M4A.jpg);
             background-size: cover;
         }
-        
+
         .floatLeft {
             float: left;
             padding: 2%;
         }
-        
+
         .floatRight {
             float: right;
             padding: 3%;
         }
-        
+
         #topBar {}
-        
+
         #content {}
-        
+
         #navBar {
             display: grid;
         }
-        
+
         .topImg {
             height: 10vh;
         }
-        
+
         .blacken {
             filter: brightness(0);
         }
-        
+
         #welcomeText {
             font-size: 2em;
             text-align: center;
@@ -68,7 +69,7 @@
             margin: 0px;
             margin-top: 6%;
         }
-        
+
         #tipText {
             font-size: 1.5em;
             text-align: center;
@@ -78,7 +79,7 @@
             padding-bottom: 5%;
             margin: 1%;
         }
-        
+
         #contentPane {
             background-color: white;
             border: 2px solid black;
@@ -88,7 +89,7 @@
             margin-right: 5%;
             box-shadow: 3px 3px black;
         }
-        
+
         #selector {
             display: grid;
             grid-template-columns: auto 3% auto;
@@ -98,7 +99,7 @@
             background: linear-gradient(to bottom right, #0500FF, #AA00FF);
             height: 100%;
         }
-        
+
         .selector {
             background-color: black;
             border: 2px solid white;
@@ -108,19 +109,19 @@
             margin: 0px;
             padding: 0px;
         }
-        
+
         #rightSide {
             margin-right: 10%;
             margin-bottom: 5%;
             margin-top: 5%;
         }
-        
+
         #leftSide {
             margin-left: 10%;
             margin-bottom: 5%;
             margin-top: 5%;
         }
-        
+
         .middle {
             font-size: 1.6em;
             text-align: center;
@@ -190,8 +191,20 @@
                 </div>
             </div>
         </div>
-        <div id="contentPane"></div>
+        <div id="firebaseui-auth-container"></div>
+    <div id="loader">Loading...</div>
     </div>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+                https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="./scripts/firebaseConfig.js"></script>
+    <script src="./scripts/firebaseui.js"></script>
 </body>
 
 </html>
