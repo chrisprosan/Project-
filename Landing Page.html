@@ -2,12 +2,19 @@
 <html lang="en">
 
 <head>
+    <title>Cash Flow's</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <style>
         body {
             margin: 0px;
             padding: 0px;
             font-size: 2em;
             background: linear-gradient(to bottom, #0400D2, #000000) fixed;
+            border: 1px solid black;
         }
         
         #filter1 {
@@ -18,7 +25,7 @@
             background: linear-gradient(to bottom, #000000, #FFFFFF) fixed;
         }
         
-        #container {
+        #containerSelf {
             display: grid;
             grid-template-columns: auto;
             grid-template-rows: auto;
@@ -45,7 +52,7 @@
         }
         
         .topImg {
-            height: 100px;
+            height: 10vh;
         }
         
         .blacken {
@@ -55,13 +62,18 @@
         #welcomeText {
             font-size: 2em;
             text-align: center;
+            vertical-align: middle;
+            color: black;
             padding: 0px;
             margin: 0px;
+            margin-top: 6%;
         }
         
         #tipText {
             font-size: 1.5em;
             text-align: center;
+            color: black;
+            vertical-align: middle;
             padding: 1%;
             padding-bottom: 5%;
             margin: 1%;
@@ -74,6 +86,7 @@
             min-height: 70vh;
             margin-left: 5%;
             margin-right: 5%;
+            box-shadow: 3px 3px black;
         }
         
         #selector {
@@ -82,7 +95,7 @@
             grid-template-rows: auto;
             margin: 0px;
             padding: 0px;
-            background-color: #0500FF;
+            background: linear-gradient(to bottom right, #0500FF, #AA00FF);
             height: 100%;
         }
         
@@ -109,41 +122,62 @@
         }
         
         .middle {
-            font-size: 1.5em;
+            font-size: 1.6em;
             text-align: center;
-            transform: translateY(-40%);
+            transform: translateY(50%);
         }
         
-        #blue {
-            background-color: #0500FF;
-            box-shadow: 5px 5px black;
-        }
-        
-        #blueFilter {
+        .blueFilter {
             background-color: #0055FF;
-            filter: opacity(70%);
+            filter: opacity(90%);
+            box-shadow: 1px black;
             display: grid;
             grid-template-rows: auto;
+        }
+        
+        .navBackground {
+            background-color: white;
+            filter: opacity(90%);
+            width: 100%;
+            border: 1px solid black;
+        }
+        
+        nav a {
+            font-size: 1.2em;
+            color: black;
+            float: right;
+            padding: 2%;
+            width: 20%;
+            margin-top: 1%;
+        }
+      nav p {
+            font-size: 1.4em;
+            color: black;
+            float: left;
+            padding: 2%;
+            padding-right: 8%;
+            width: 20%;
         }
     </style>
 </head>
 
 <body>
-    <div id="container">
-        <div id="blueFilter">
+    <div id="containerSelf">
+        <div class="blueFilter">
             <div id="topBar">
                 <img src="images/ACF-logo-placeholder.png" class="floatLeft topImg">
                 <img src="images/Icon-04-512.png" class="floatRight topImg blacken">
                 <img src="images/Menu-512.png" class="floatRight topImg">
             </div>
-            <div id="navBar">
-
-            </div>
-            <p id="welcomeText">Welcome</p>
-            <p id="tipText">Tip</p>
+            <nav class="nav nav-tabs flex-column flex-sm-row navBackground">
+                <p class="nav-item"><b>Navigation</b></p>
+                <a class="nav-item nav-link active" href="#"><b>Expenses</b></a>
+                <a class="nav-item nav-link" href="#"><b>Budgets</b></a>
+            </nav>
+            <p id="welcomeText">Welcome!</p>
+            <p id="tipText"></p>
         </div>
     </div>
-
     <div id="content">
         <div id="blue">
             <div id="selector">
