@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Project</title>
+    <meta charset="utf-8" />
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/4.2.0/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/4.2.0/firebaseui.css" />
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAKIQ82Oqhr_IRKYJYcss8QGEg8DEtHNWQ",
+            authDomain: "project-20db7.firebaseapp.com",
+            databaseURL: "https://project-20db7.firebaseio.com",
+            projectId: "project-20db7",
+            storageBucket: "project-20db7.appspot.com",
+            messagingSenderId: "1098873986764",
+            appId: "1:1098873986764:web:f6216c9a33f71b741e6c69"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+</head>
+
+<body>
+    <script>
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                window.open("Landing%20Page.html", "_self");
+            } else {
+                console.log("no user signed in");
+            }
+
+        });
+    </script>
+
+</body>
+
+</html>
