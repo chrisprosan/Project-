@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Cash Flows</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Lobster|Roboto|Staatliches|Teko&display=swap');
+
+    html, body {
+      margin: 0px;
+      padding: 0px;
+      
+      font-family: 'Roboto', sans-serif;
+    }
+    
+    #container {
+      display: grid;
+    }
+    
+    #header {
+      background-image: url("images/jean-carlo-emer-bEZRJC-XvTc-unsplash.jpg");
+      background-size: cover;
+      
+      filter: drop-shadow(0px 10px 5px blue);
+      border: 1px solid black;
+    }
+    
+    #blueFiltered {
+      background-color: #0055FF;
+      filter: opacity(70%);
+      display: grid;
+      height: 100%;
+    }
+    
+    #logo {
+      float: left;
+    }
+    
+    #burgerMenu {
+      float: right;
+    }
+    
+    #settingsMenu {
+      float: right;
+    }
+    
+    .topBarImage {
+      width: 150px;
+      margin: 10px;
+    }
+    
+    .blackenImage {
+      filter: brightness(0%);
+    }
+    
+    #navBar {
+      background-color: white;
+      border: 1px solid black;
+    }
+    
+    #navBar ul li {
+      list-style: none;
+      float: left;
+      
+      font-size: 2em;
+    }
+    
+    #navBarList {
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      text-align: center;
+    }
+    
+    #welcomeText {
+      text-align: center;
+      
+      color: white;
+      
+      font-size: 3em;
+      font-family: 'Josefin Sans', sans-serif;
+    }
+    
+    a:hover {
+      color: blue;
+    }
+    
+    .parentElement {
+      position: relative;
+      height: 100%;
+      width: 100%;
+    }
+    
+    .childElement {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      filter: opacity(80%);
+      z-index: -1;
+      background-color: blue;
+    }
+    
+    #headerContainer {
+      display: grid;
+    }
+    
+    #footer {
+      position: fixed;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+      
+      min-height: 10%;
+      
+      filter: drop-shadow(-5px -15px 25px blue);
+      
+      background-color: blue;
+      border: 1px solid black;
+    }
+    
+    #introductions {
+      
+    }
+    
+    
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div id="parent_div" class="parentElement">
+      <div id="header" class="childElement">
+        <div id="blueFiltered"></div>
+      </div>
+      <div id="headerContainer">
+      <div id="topBar">
+          <img id="logo" class="topBarImage" src="images/ACF-logo-placeholder.png" style="filter: opacity(90%)">
+          <img id="burgerMenu" class="topBarImage" src="images/Menu-512.png">
+          <img id="settingsMenu" class="topBarImage blackenImage" src="images/Icon-04-512.png">
+        </div>
+        <div id="navBar">
+          <ul id="navBarList">
+            <li><a><b>Budgets</b></a></li>
+            <li><a><b>Transactions</b></a></li>
+            <li><a><b>Sign In</b></a></li>
+            <li><a><b>Sign Out</b></a></li>
+          </ul>
+        </div>
+        <div id="textSpace">
+          <p id="welcomeText">Welcome!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="content">
+    <div id="introductions">
+      <h1>hello</h1>
+    </div>
+  </div>
+  <div id="footer"></div>
+</body>
+  
+</html>
