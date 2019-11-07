@@ -5,8 +5,6 @@
     <title>Cash Flow's</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
 
     <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
@@ -62,6 +60,7 @@
         // The start method will wait until the DOM is loaded.
         ui.start('#firebaseui-auth-container', uiConfig);
     </script>
+
     <style>
         @import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Lobster|Roboto|Staatliches|Teko&display=swap');
 
@@ -257,7 +256,9 @@
                 <a class="nav-item nav-link active" href="#"><b>Budgets</b></a>
                 <a class="nav-item nav-link" href="#"><b>Expenses</b></a>
             </nav>
-            <p id="welcomeText">Welcome!</p>
+            <div id="welcomeText">
+                <p>Welcome!</p>
+            </div>
             <p id="tipText"></p>
         </div>
     </div>
@@ -274,21 +275,22 @@
             </div>
         </div>
         <div id="contentPane">
+            <div id="firebaseui-auth-container">
+            </div>
         </div>
-    </div>
-    <script>
-        firebase.auth().onAuthStateChanged(function (user) {
-            if (user) {
-                var signin = document.createElement("div");
-                signin.setAttribute("id", "firebaseui-auth-container");
-                var contentPane = document.getElementById("contentPane");
-                contentPane.appendChild(signin);
-            } else {
-                console.log("no user signed in")
-            }
+        <script>
+            firebase.auth().onAuthStateChanged(function (user) {
+                if (user) {
+                    var welcome = document.getElementById("welcomeText");
+                    welcome.innerHTML= '<p>Welcome,</p>' + user.displayName;
+                    var signIn = document.getElementById("firebaseui-auth-container");
+                    signIn.style.display = "none";
+                } else {
+                    console.log("no user signed in");
+                }
 
-        });
-    </script>
+            });
+        </script>
 
 </body>
 
