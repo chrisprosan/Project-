@@ -4,127 +4,16 @@
   <meta charset="utf-8">
   <title>Cash Flows</title>
 
+  <link type="text/css" rel="stylesheet" href="style/landing-page.css">
+  
   <style>
-    @import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Lobster|Roboto|Staatliches|Teko&display=swap');
-
-    html, body {
-      margin: 0px;
-      padding: 0px;
-      
-      font-family: 'Roboto', sans-serif;
-    }
-    
-    #container {
-      display: grid;
-    }
-    
     #header {
-      background-image: url("images/jean-carlo-emer-bEZRJC-XvTc-unsplash.jpg");
+      background-image: url("images/MP3_Skepta-Pure_Water_Single_2018_iTunes_Plus_AAC_M4A.jpg");
       background-size: cover;
-      
+
       filter: drop-shadow(0px 10px 5px blue);
       border: 1px solid black;
     }
-    
-    #blueFiltered {
-      background-color: #0055FF;
-      filter: opacity(70%);
-      display: grid;
-      height: 100%;
-    }
-    
-    #logo {
-      float: left;
-    }
-    
-    #burgerMenu {
-      float: right;
-    }
-    
-    #settingsMenu {
-      float: right;
-    }
-    
-    .topBarImage {
-      width: 150px;
-      margin: 10px;
-    }
-    
-    .blackenImage {
-      filter: brightness(0%);
-    }
-    
-    #navBar {
-      background-color: white;
-      border: 1px solid black;
-    }
-    
-    #navBar ul li {
-      list-style: none;
-      float: left;
-      
-      font-size: 2em;
-    }
-    
-    #navBarList {
-      display: grid;
-      grid-template-columns: auto auto auto auto;
-      text-align: center;
-    }
-    
-    #welcomeText {
-      text-align: center;
-      
-      color: white;
-      
-      font-size: 3em;
-      font-family: 'Josefin Sans', sans-serif;
-    }
-    
-    a:hover {
-      color: blue;
-    }
-    
-    .parentElement {
-      position: relative;
-      height: 100%;
-      width: 100%;
-    }
-    
-    .childElement {
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      bottom: 0px;
-      left: 0px;
-      filter: opacity(80%);
-      z-index: -1;
-      background-color: blue;
-    }
-    
-    #headerContainer {
-      display: grid;
-    }
-    
-    #footer {
-      position: fixed;
-      bottom: 0px;
-      left: 0px;
-      width: 100%;
-      
-      min-height: 10%;
-      
-      filter: drop-shadow(-5px -15px 25px blue);
-      
-      background-color: blue;
-      border: 1px solid black;
-    }
-    
-    #introductions {
-      
-    }
-    
-    
   </style>
 </head>
 
@@ -136,19 +25,25 @@
       </div>
       <div id="headerContainer">
       <div id="topBar">
-          <img id="logo" class="topBarImage" src="images/ACF-logo-placeholder.png" style="filter: opacity(90%)">
+          <img id="logo" class="topBarImage" src="images/Logos/8862_Cash%20Flows_A_03.png" style="filter: opacity(90%)">
+<!--
+
           <img id="burgerMenu" class="topBarImage" src="images/Menu-512.png">
+
+-->
           <img id="settingsMenu" class="topBarImage blackenImage" src="images/Icon-04-512.png">
         </div>
+<!--
         <div id="navBar">
           <ul id="navBarList">
             <li><a><b>Budgets</b></a></li>
             <li><a><b>Transactions</b></a></li>
             <li><a><b>Sign In</b></a></li>
-            <li><a><b>Sign Out</b></a></li>
           </ul>
         </div>
+-->
         <div id="textSpace">
+          <p id="titleText">Cash Flows</p>
           <p id="welcomeText">Welcome!</p>
         </div>
       </div>
@@ -156,10 +51,24 @@
   </div>
   <div id="content">
     <div id="introductions">
-      <h1>hello</h1>
+      <h1 class="heading">Ipsom</h1>
+      <p class="commonText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus accumsan metus nulla, non scelerisque sem viverra at. Curabitur luctus elit sed porttitor luctus. Mauris quis aliquam nulla. Donec a hendrerit mi, sit amet consequat libero. Ut eleifend risus vitae quam tincidunt fermentum. Cras a diam arcu. Integer at justo justo. Quisque erat massa, convallis sed metus eu, gravida posuere massa. Phasellus dapibus vitae urna vel ornare. In hac habitasse platea dictumst. Nullam efficitur interdum lorem, id venenatis velit commodo non. Quisque ipsum leo, congue id sagittis a, rhoncus eu purus. Donec vehicula arcu at ex elementum varius. Cras vulputate nibh lacus, quis condimentum dolor euismod vel.</p>
     </div>
   </div>
-  <div id="footer"></div>
+  <div id="footer">
+    <div id="expensesButton">
+      <img src="images/list.png" class="navImages blackenImage">
+      <p class="responsiveText">Budgets</p>
+    </div>
+    <div id="transactionsButton">
+      <img src="images/039-512.png" class="navImages blackenImage">
+      <p class="responsiveText">Transactions</p>
+    </div>
+    <div id="AccountsButton">
+      <img src="images/personlogo.png" class="navImages blackenImage">
+      <p class="responsiveText">Sign In</p>
+    </div>
+  </div>
 </body>
   
 </html>

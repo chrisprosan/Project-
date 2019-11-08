@@ -1,142 +1,244 @@
-body {
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Lobster|Roboto|Staatliches|Teko&display=swap');
+
+html, body {
   margin: 0px;
   padding: 0px;
 
-  font-size: 1.3em;
+  font-family: 'Roboto', sans-serif;
+}
 
+#container {
   display: grid;
-
-  grid-template-columns: auto;
-  grid-template-rows: auto auto 80vh;
 }
 
-.credits {
-  float: right;
-}
 
 #header {
-  background-color: black;
+  background-image: url("../images/MP3_Skepta-Pure_Water_Single_2018_iTunes_Plus_AAC_M4A.jpg");
+  background-size: cover;
+
+  filter: drop-shadow(0px 10px 5px blue);
   border: 1px solid black;
 }
 
-#backgroundBar {
-  background-color: lightgray;
-  height: 50%;
-  width: 100vw;
-  border: 1px solid black;
+#blueFiltered {
+  background-color: #0055FF;
+  filter: opacity(70%);
+  display: grid;
+  height: 100%;
 }
 
 #logo {
-  width: 200px;
-  height: 200px;
-  border-radius: 100%;
-  border: 3px solid black;
-  background-color: gray;
+  float: left;
+  width: 256px;
+  margin-top: -2.25vh;
+}
 
-  transform: translate(30%, 30%);
+#burgerMenu {
+  float: right;
+}
+
+#settingsMenu {
+  float: right;
+}
+
+.topBarImage {
+  width: 150px;
+  margin: 10px;
+}
+
+#topBar {
+  margin-bottom: -3vw;
+}
+
+.blackenImage {
+  filter: brightness(0%);
 }
 
 #navBar {
-    transform: translate(-0.8%, 7px);
-}
-
-.navItem {
-  float: right;
-}
-
-.navItem {
-  font-size: 1.2em;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transform: translate(9px, 12px);
-}
-
-.navItemOutside {
-  float: right;
-
-  width: 250px;
-  height: 60px;
-
-  /*clip-path: polygon(24% 0%, 100% 0%, 76% 100%, 0% 100%);*/
-  clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 25% 100%);
   background-color: white;
-
-  text-align: center;
-
-  position: fixed;
-  transform: translate(-25px, -25px);
+  border: 1px solid black;
 }
 
-.navItemInside {
-  padding: 3%;
-  margin-top: -3%;
-  margin-right: -70px;
+#navBar ul li {
+  list-style: none;
+  float: left;
 
-  float: right;
+  font-size: 2em;
+}
 
-  align-content: center;
+#navBarList {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  text-align: center;
+}
 
-  width: 200px;
-  height: 10px;
+#titleText {
+  text-align: center;
 
-  /*clip-path: polygon(24% 0%, 100% 0%, 76% 100%, 0% 100%);*/
-  clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 25% 100%);
-  background-color: black;
+  color: white;
+
+  font-size: 5em;
+  font-family: 'Josefin Sans', sans-serif;
+
+  margin-top: 0px;
 }
 
 #welcomeText {
-  margin-right: 5%;
-  float: right;
-  font-size: 1.5em;
+  text-align: center;
+
+  color: white;
+
+  font-size: 3em;
+  font-family: 'Josefin Sans', sans-serif;
+
+  margin-top: -64px;
 }
 
-.moveRight {
-  margin-right: 3%;
+a:hover {
+  color: blue;
 }
 
-.header {
-    margin-top: 8%;
-    font-size: 5em;
+.parentElement {
+  position: relative;
+  height: 100%;
+  width: 100%;
 }
 
-.bigbutton {
-    position: relative;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    border-radius: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10%;
-    text-align: center;
-    color: white;
+.childElement {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  filter: opacity(80%);
+  z-index: -1;
+  background-color: blue;
 }
 
-.buttontext {
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    border-radius: 50px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    font-size: 2em;
-}
-
-.advice {
-    text-align: center;
-    font-size: 1.6em;
-    margin-top: 15%;
+#headerContainer {
+  display: grid;
 }
 
 #footer {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
   width: 100%;
-  height: 10%;
-  background-color: gray;
+
+  min-height: 0%;
+
+  filter: drop-shadow(-5px -15px 25px blue);
+
+  background-color: blue;
   border: 1px solid black;
 
-  position: fixed;
-  transform: translateY(95vh);
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto;
+  text-align: center;
+
+  font-size: 2em;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+@media screen and (max-width: 2560px) {
+  .responsiveText {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 1920px) {
+  .responsiveText {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width: 778px) {
+  .responsiveText {
+    font-size: 0.7em;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .responsiveText {
+   font-size: 0.6em; 
+  }
+}
+
+@media screen and (max-width: 2560px) {
+  .navImages {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 64px;
+    padding-top: 5%;
+  }
+}
+
+@media screen and (max-width: 1920px) {
+  .navImages {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 48px;
+    padding-top: 5%;
+  }
+}
+
+@media screen and (max-width: 778px) {
+  .navImages {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 36px;
+    padding-top: 5%;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .navImages {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 24px;
+    padding-top: 5%;
+  }
+}
+
+#content {
+  min-height: 100vh;
+  width: 100%;
+  position: absolute;
+
+  background: linear-gradient(to bottom, blue, #710cFF) fixed;
+  border: 1px solid black;
+}
+
+#introductions {
+  background-color: white;
+  border: 1px solid black;
+
+  padding-left: 3%;
+  line-height: 2em;
+}
+
+.heading {
+  font-size: 4em;
+  font-family: "Teko", sans-serif;
+}
+
+.commonText {
+  font-size: 2em;
+}
+
+#budgetsButton {
+  display: block;
+}
+
+#transactionsButton {
+  display: block;
+}
+
+#accountsButton {
+
 }
