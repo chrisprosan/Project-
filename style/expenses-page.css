@@ -1,0 +1,133 @@
+#title {
+  text-align: center;
+
+  background-color: white;
+  border: 1px solid black;
+
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 2.25em;  
+
+  padding: 2%;
+  display: grid;
+
+  height: 12.5vw;
+}
+
+#plus {
+  height: 128px;
+  position: absolute;
+  left: 1.8vw;
+  top: 1.8vw;
+  border: 1px solid black;
+}
+
+#spendingLogHeader {
+  position: absolute;
+  top: 3vw;
+  right: 40vw;
+}
+
+#filter {
+  position: absolute;
+  right: 1.8vw;
+}
+
+#sort {
+  font-size: 1em;
+  font-family: "Josefin Sans", sans-serif;
+
+  width: 15vw;
+
+  vertical-align: bottom;
+  line-height: 20px;
+}
+
+#spendingLog {
+  display: grid;
+  grid-template-columns: auto;
+
+  margin: 3%;
+}
+
+.transaction {
+  margin: 1%;
+  margin-bottom: 3%;
+  padding: 2%;
+
+  background-color: white;
+  border: 1px solid black;
+
+
+  font-size: 2em;
+  font-family: "Josefin Sans", sans-serif;
+
+  line-height: 25%;
+}
+
+.activeCurrency {
+
+}
+
+.costAssociated {
+ float: right; 
+
+  font-size: 1.2em;
+}
+
+.itemPurchased {
+  float: left; 
+  font-size: 1.2em;
+}
+
+.timestamp {
+
+}
+
+.date {
+
+}
+
+#addTransactionWindow {
+  background-color: white;
+  border: 3px solid black;
+  font-size: 2em;
+  padding: 3%;
+  margin: 10%;
+  line-height: 25%;
+}
+
+#addTransHeader {
+  font-family: "Teko", sans-serif;
+  font-size: 3em;
+}
+
+.addTransFieldHeader {
+  font-family: "Teko", sans-serif;
+  font-size: 2.25em;
+}
+
+.addTransFieldInput {
+  font-size: 1.125em;
+}
+
+.button {
+  padding: 6%;
+  display: inline-block;
+
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-family: "Josefin Sans", sans-serif;
+
+  cursor: pointer;
+}
+
+#buttonField {
+  display: grid;
+  grid-template-columns: auto auto;
+}

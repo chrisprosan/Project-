@@ -6,9 +6,8 @@
     <title>Budgets</title>
     
     <link type="text/css" rel="stylesheet" href="style/landing-page.css">
-    
+    <link type="text/css" rel="stylesheet" href="style/expenses-page.css">
   </head>
-
   <body>
   <div id="container">
     <div id="parent_div" class="parentElement">
@@ -17,24 +16,72 @@
       </div>
       <div id="headerContainer">
       <div id="topBar">
-          <img id="logo" class="topBarImage" src="images/Logos/8862_Cash%20Flows_A_03.png" style="filter: opacity(90%)">
+          <a href="LandingPage2.html"><img id="logo" class="topBarImage" src="images/Logos/8862_Cash%20Flows_A_03.png" style="filter: opacity(90%)"></a>
           <img id="settingsMenu" class="topBarImage blackenImage" src="images/Icon-04-512.png">
         </div>
       </div>
     </div>
   </div>
+    
   <div id="content">
+    <div id="title">
+      <img id="plus" src="images/plus.png">
+      <p id="spendingLogHeader">Spending Log</p>
+      <form id="filter">
+        <input id="sort" type="text" placeholder="Sort">
+      </form>
+    </div>
+    
+    <div id="spendingLog">
+      <div class="transaction">
+        <p class="timestamp">[16:30] - <span class="date">October 2, 2019</span></p>
+        <p class="itemPurchased">Hot Chocolate</p>
+        <div class="costAssociated">-2.00 <span class="activeCurrency">CAD</span></div>
+      </div>
+      <div class="transaction">
+        <p class="timestamp">[14:27] - <span class="date">September 30, 2019</span></p>
+        <p class="itemPurchased">Groceries</p>
+        <div class="costAssociated">-60.49 <span class="activeCurrency">CAD</span></div>
+      </div>
+    </div>
+    
+    <div id="addTransactionWindow">
+      <p id="addTransHeader">Create A Transaction!</p>
+      <form>
+        <p class="addTransFieldHeader">What Did You Buy?</p>
+        <input class="addTransFieldInput" type="text" placeholder="What?">
+        
+        <p class="addTransFieldHeader">How Much Was It?</p>
+        <input class="addTransFieldInput" type="text" placeholder="How Much?">
+        
+        <p class="addTransFieldHeader">Anything You Want to Say?</p>
+        <input class="addTransFieldInput" type="text" placeholder="Notes?">
+        
+        <p class="addTransFieldHeader">Which Budget Are You On?</p>
+        <input class="addTransFieldInput" type="text" placeholder="My Active Budget" value="My Active Budget">
+        <p class="addTransFieldHeader"></p>
+        
+        <div id="buttonField">
+          <input type="button" class="button" value="Add Transaction!">
+          <input type="button" class="button" value="Cancel">
+        </div>
+      </form>
+    </div>
     
   </div>
   <div id="footer">
-    <div id="expensesButton">
-      <img src="images/list.png" class="navImages blackenImage">
-      <p class="responsiveText">Budgets</p>
-    </div>
-    <div id="transactionsButton">
-      <img src="images/039-512.png" class="navImages blackenImage">
-      <p class="responsiveText">Transactions</p>
-    </div>
+    <a href="BudgetPage.html">
+      <div id="expensesButton">
+        <img src="images/list.png" class="navImages blackenImage">
+        <p class="responsiveText">Budgets</p>
+      </div>
+    </a>
+    <a href="ExpensesPage.html">
+      <div id="transactionsButton">
+        <img src="images/039-512.png" class="navImages blackenImage">
+        <p class="responsiveText">Transactions</p>
+      </div>
+    </a>
     <div id="AccountsButton">
       <img src="images/personlogo.png" class="navImages blackenImage">
       <p class="responsiveText">Sign In</p>

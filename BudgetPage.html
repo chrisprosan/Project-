@@ -6,7 +6,7 @@
     <title>Budgets</title>
     
     <link type="text/css" rel="stylesheet" href="style/landing-page.css">
-    
+    <link type="text/css" rel="stylesheet" href="style/budgets-page.css">  
   </head>
 
   <body>
@@ -17,28 +17,162 @@
       </div>
       <div id="headerContainer">
       <div id="topBar">
-          <img id="logo" class="topBarImage" src="images/Logos/8862_Cash%20Flows_A_03.png" style="filter: opacity(90%)">
+          <a href="LandingPage2.html"><img id="logo" class="topBarImage" src="images/Logos/8862_Cash%20Flows_A_03.png"></a>
           <img id="settingsMenu" class="topBarImage blackenImage" src="images/Icon-04-512.png">
         </div>
       </div>
     </div>
   </div>
   <div id="content">
+    <!-- Active Budgets Selector -->
+    <div id="activeBudgets">
+      <div id="activeBudgetsHeader" class="sideBySide dropdownHeader">
+        <p class="label">Active Budget</p>
+        <form id="activeBudgetsForm">
+          <input id="budgetName" class="formSide" type="text" placeholder="No Budgets Available">
+        </form>
+      </div>
+    </div>
     
+    <!-- Create A Budget Field -->
+    <div id="createBudgets">
+      <div id="createBudgetsHeader" class="dropdownHeader">
+        <p>Create A Budget</p>
+      </div>
+      <!-- This holds all of the dropdowns down from "Create A Budget" -->
+      <div id="createBudgetDropdownContainer">
+        <div class="sideBySide dropdownHeader">
+          <p class="label">Budget Name</p>
+          <form id="budgetNameSelector">
+            <input id="budgetName" class="formSide" type="text" placeholder="-">
+          </form>
+        </div>
+        <div class="sideBySide dropdownHeader">
+          <p class="label">Time Intervel</p>
+          <form id="timeIntervelSelector">
+            <input id="timeIntervel" class="formSide" type="text" placeholder="-">
+          </form>
+        </div>
+        <div class="sideBySide dropdownHeader">
+          <p class="label">Currency</p>
+          <form id="currencySelector">
+            <input id="currency" class="formSide" type="text" placeholder="-">
+          </form>
+        </div>
+      <!-- This holds the entire table -->
+      <div id="tableContainer">
+        <div id="table">
+          <div class="row">
+            <p class="headerCell cell">Catagories</p>
+            <p class="headerCell cell">Limit</p>
+            <p class="headerCell cell">Notify Me At</p>
+          </div>
+          <div class="row">
+            <div id="addCatagory">
+              <p class="headerCell cell">Add Catagory</p>
+              <div id="centerPlus">
+                <img id="addCatagoryPlus" src="images/plus.png">
+              </div>
+            </div>
+            <p class="headerCell cell"></p>
+            <p class="headerCell cell"></p>
+          </div>
+        </div>
+      </div>
+      <input type="button" id="createBudgetButton" value="Create Budget!">
+    </div>
   </div>
-  <div id="footer">
-    <div id="expensesButton">
-      <img src="images/list.png" class="navImages blackenImage">
-      <p class="responsiveText">Budgets</p>
-    </div>
-    <div id="transactionsButton">
-      <img src="images/039-512.png" class="navImages blackenImage">
-      <p class="responsiveText">Transactions</p>
-    </div>
-    <div id="AccountsButton">
-      <img src="images/personlogo.png" class="navImages blackenImage">
-      <p class="responsiveText">Sign In</p>
+    <!-- Popular Budgets Field -->
+    <div id="popularBudgets">
+      <div id="popularBudgetsHeader" class="dropdownHeader">
+        <p>Popular Budgets</p>
+      </div>
+      <!-- This holds all of the budgets and the sort function -->
+      <div id="popularBudgetDropdownContainer">
+        <div class="sideBySide dropdownHeader">
+          <p class="label">Sort By</p>
+          <form id="sortBySelector">
+            <input id="sortBy" class="formSide" type="text" placeholder="Highest Rated">
+          </form>
+        </div>
+        <!-- This is one budget -->
+        <div id="popularBudgetsContainer">
+          <div id="popBudgetHeader">
+            <div id="creation">
+              <p id="name">Broke College Student Budget</p>
+              <p id="creator">BCITStudent1239</p>
+            </div>
+            <div id="stars">
+              <img class="star" src="images/pngtree-star-icon-element-clipart-png-image_1628648.jpg">
+              <img class="star" src="images/pngtree-star-icon-element-clipart-png-image_1628648.jpg">
+              <img class="star" src="images/pngtree-star-icon-element-clipart-png-image_1628648.jpg">
+              <img class="star" src="images/pngtree-star-icon-element-clipart-png-image_1628648.jpg">  
+            </div>
+          </div>
+          <div id="popBudgetSpace">
+            <div id="popBudgetText">
+              <p>Hello</p>
+              <p>Here</p>
+              <p>Is</p>
+              <p>Some</p>
+              <p>Text</p>
+              <p>About</p>
+              <p>The</p>
+              <p>Pictured</p>
+              <p>Chart</p>
+            </div>
+            <img class="pieChart" src="images/pie-chart-computer-icons-diagram-charts.png">
+          </div>
+          <input type="button" id="addToLibraryButton" value="Add to Library">
+        </div>
+        <!-- This is one budget -->
+        <div id="popularBudgetsContainer">
+          <div id="popBudgetHeader">
+            <div id="creation">
+              <p id="name">Rich Ivy League Student Budget</p>
+              <p id="creator">HarvardCalls983</p>
+            </div>
+            <div id="stars">
+              <img class="star" src="images/pngtree-star-icon-element-clipart-png-image_1628648.jpg">
+              <img class="star" src="images/pngtree-star-icon-element-clipart-png-image_1628648.jpg">
+            </div>
+          </div>
+          <div id="popBudgetSpace">
+            <div id="popBudgetText">
+              <p>Hello</p>
+              <p>Here</p>
+              <p>Is</p>
+              <p>Some</p>
+              <p>Text</p>
+              <p>About</p>
+              <p>The</p>
+              <p>Pictured</p>
+              <p>Chart</p>
+            </div>
+            <img class="pieChart" src="images/pie-chart-computer-icons-diagram-charts.png">
+          </div>
+          <input type="button" id="addToLibraryButton" value="Add to Library">
+        </div>
+      </div>
     </div>
   </div>
+    <div id="footer">
+      <a href="BudgetPage.html">
+        <div id="expensesButton">
+          <img src="images/list.png" class="navImages blackenImage">
+          <p class="responsiveText">Budgets</p>
+        </div>
+      </a>
+      <a href="ExpensesPage.html">
+        <div id="transactionsButton">
+          <img src="images/039-512.png" class="navImages blackenImage">
+          <p class="responsiveText">Transactions</p>
+        </div>
+      </a>
+      <div id="AccountsButton">
+        <img src="images/personlogo.png" class="navImages blackenImage">
+        <p class="responsiveText">Sign In</p>
+      </div>
+    </div>
   </body>
 </html>

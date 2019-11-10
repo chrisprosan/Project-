@@ -206,7 +206,7 @@ a:hover {
 }
 
 #content {
-  min-height: 100vh;
+  min-height: 120vh;
   width: 100%;
   position: absolute;
 
@@ -241,4 +241,13 @@ a:hover {
 
 #accountsButton {
 
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
 }
