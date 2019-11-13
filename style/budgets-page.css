@@ -22,11 +22,11 @@
 }
 
 #createBudgetsHeader {
-
+  cursor: pointer;
 }
 
 #popularBudgetsHeader {
-
+  cursor: pointer;
 }
 
 .formSide {
@@ -118,6 +118,14 @@
   cursor: pointer;
 }
 
+#createBudgetDropdownContainer {
+  display: none;
+}
+
+#popularBudgetDropdownContainer {
+  display: none;
+}
+
 .label {
   width: 40vw;
   margin-left: 10vw; 
@@ -191,4 +199,12 @@
   font-family: "Josefin Sans", sans-serif;
 
   cursor: pointer; 
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
 }

@@ -6,7 +6,11 @@
     <title>Budgets</title>
     
     <link type="text/css" rel="stylesheet" href="style/landing-page.css">
-    <link type="text/css" rel="stylesheet" href="style/budgets-page.css">  
+    <link type="text/css" rel="stylesheet" href="style/budgets-page.css"> 
+    
+    <script>
+      
+    </script>
   </head>
 
   <body>
@@ -18,7 +22,7 @@
       <div id="headerContainer">
       <div id="topBar">
           <a href="LandingPage2.html"><img id="logo" class="topBarImage" src="images/Logos/8862_Cash%20Flows_A_03.png"></a>
-          <img id="settingsMenu" class="topBarImage blackenImage" src="images/Icon-04-512.png">
+          <img id="settingsMenu" class="topBarImage blackenImage" src="images/menu_setting_icon_158273.png">
         </div>
       </div>
     </div>
@@ -37,7 +41,7 @@
     <!-- Create A Budget Field -->
     <div id="createBudgets">
       <div id="createBudgetsHeader" class="dropdownHeader">
-        <p>Create A Budget</p>
+        <p id="hello">Create A Budget</p>
       </div>
       <!-- This holds all of the dropdowns down from "Create A Budget" -->
       <div id="createBudgetDropdownContainer">
@@ -174,5 +178,34 @@
         <p class="responsiveText">Sign In</p>
       </div>
     </div>
+    
+    <script>
+      function createBudgets() {
+        document.getElementById("createBudgetsHeader").addEventListener("click", function() {
+          if (document.getElementById("createBudgetDropdownContainer").style.display == "block") {
+            console.log("123");
+            document.getElementById("createBudgetDropdownContainer").style.display = "none";
+          } else {
+            document.getElementById("createBudgetDropdownContainer").style.display = "block";
+            console.log("123456");
+          }
+        })
+      }
+      
+      function popularBudgets() {
+        document.getElementById("popularBudgetsHeader").addEventListener("click", function() {
+          if (document.getElementById("popularBudgetDropdownContainer").style.display == "block") {
+            console.log("123");
+            document.getElementById("popularBudgetDropdownContainer").style.display = "none";
+          } else {
+            document.getElementById("popularBudgetDropdownContainer").style.display = "block";
+            console.log("123456");
+          }
+        })
+      }
+      
+      createBudgets();
+      popularBudgets();
+    </script>
   </body>
 </html>
