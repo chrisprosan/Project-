@@ -78,15 +78,20 @@
 
 .headerCell {
   font-size: 2em;
+  text-align: center;
+  
+  width: 93.6%;
 }
 
 .regCell {
   font-size: 1em;
+  text-align: center;
+    width: 95%;
 }
 
 #addCatagory {
   display: grid;
-  grid-template-columns: 80% 20%;
+  grid-template-columns: auto;
 }
 
 #addCatagoryPlus {
