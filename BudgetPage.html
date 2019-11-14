@@ -1,27 +1,29 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    
-    <title>Budgets</title>
-    
-    <link type="text/css" rel="stylesheet" href="style/landing-page.css">
-    <link type="text/css" rel="stylesheet" href="style/budgets-page.css"> 
-    
-    <script>
-      
-    </script>
-  </head>
 
-  <body>
+<head>
+  <meta charset="utf-8">
+
+  <title>Budgets</title>
+
+  <link type="text/css" rel="stylesheet" href="style/landing-page.css">
+  <link type="text/css" rel="stylesheet" href="style/budgets-page.css">
+
+  <script>
+
+  </script>
+</head>
+
+<body>
   <div id="container">
     <div id="parent_div" class="parentElement">
       <div id="header" class="childElement">
         <div id="blueFiltered"></div>
       </div>
       <div id="headerContainer">
-      <div id="topBar">
-          <a href="LandingPage2.html"><img id="logo" class="topBarImage" src="images/Logos/8862_Cash%20Flows_A_03.png"></a>
+        <div id="topBar">
+          <a href="LandingPage2.html"><img id="logo" class="topBarImage"
+              src="images/Logos/8862_Cash%20Flows_A_03.png"></a>
           <img id="settingsMenu" class="topBarImage blackenImage" src="images/menu_setting_icon_158273.png">
         </div>
       </div>
@@ -37,7 +39,7 @@
         </form>
       </div>
     </div>
-    
+
     <!-- Create A Budget Field -->
     <div id="createBudgets">
       <div id="createBudgetsHeader" class="dropdownHeader">
@@ -63,29 +65,29 @@
             <input id="currency" class="formSide" type="text" placeholder="-">
           </form>
         </div>
-      <!-- This holds the entire table -->
-      <div id="tableContainer">
-        <div id="table">
-          <div class="row">
-            <p class="headerCell cell">Catagories</p>
-            <p class="headerCell cell">Limit</p>
-            <p class="headerCell cell">Notify Me At</p>
-          </div>
-          <div class="row">
-            <div id="addCatagory">
-              <p class="headerCell cell">Add Catagory</p>
-              <div id="centerPlus">
-                <img id="addCatagoryPlus" src="images/plus.png">
-              </div>
+        <!-- This holds the entire table -->
+        <div id="tableContainer">
+          <div id="table">
+            <div class="row">
+              <p class="headerCell cell">Catagories</p>
+              <p class="headerCell cell">Limit</p>
+              <p class="headerCell cell">Notify Me At</p>
             </div>
-            <p class="headerCell cell"></p>
-            <p class="headerCell cell"></p>
+            <div class="row">
+              <div id="addCatagory">
+                <p class="headerCell cell">Add Catagory</p>
+                <div id="centerPlus">
+                  <img id="addCatagoryPlus" src="images/plus.png">
+                </div>
+              </div>
+              <p class="headerCell cell"></p>
+              <p class="headerCell cell"></p>
+            </div>
           </div>
         </div>
+        <input type="button" id="createBudgetButton" value="Create Budget!">
       </div>
-      <input type="button" id="createBudgetButton" value="Create Budget!">
     </div>
-  </div>
     <!-- Popular Budgets Field -->
     <div id="popularBudgets">
       <div id="popularBudgetsHeader" class="dropdownHeader">
@@ -110,7 +112,7 @@
               <img class="star" src="images/pngtree-star-icon-element-clipart-png-image_1628648.jpg">
               <img class="star" src="images/pngtree-star-icon-element-clipart-png-image_1628648.jpg">
               <img class="star" src="images/pngtree-star-icon-element-clipart-png-image_1628648.jpg">
-              <img class="star" src="images/pngtree-star-icon-element-clipart-png-image_1628648.jpg">  
+              <img class="star" src="images/pngtree-star-icon-element-clipart-png-image_1628648.jpg">
             </div>
           </div>
           <div id="popBudgetSpace">
@@ -160,52 +162,60 @@
       </div>
     </div>
   </div>
-    <div id="footer">
-      <a href="BudgetPage.html">
-        <div id="expensesButton">
-          <img src="images/list.png" class="navImages blackenImage">
-          <p class="responsiveText">Budgets</p>
-        </div>
-      </a>
-      <a href="ExpensesPage.html">
-        <div id="transactionsButton">
-          <img src="images/039-512.png" class="navImages blackenImage">
-          <p class="responsiveText">Transactions</p>
-        </div>
-      </a>
-      <div id="AccountsButton">
-        <img src="images/personlogo.png" class="navImages blackenImage">
-        <p class="responsiveText">Sign In</p>
+  <div id="footer">
+    <a href="BudgetPage.html">
+      <div id="expensesButton">
+        <img src="images/list.png" class="navImages blackenImage">
+        <p class="responsiveText">Budgets</p>
       </div>
+    </a>
+    <a href="ExpensesPage.html">
+      <div id="transactionsButton">
+        <img src="images/039-512.png" class="navImages blackenImage">
+        <p class="responsiveText">Transactions</p>
+      </div>
+    </a>
+    <div id="AccountsButton">
+      <img src="images/personlogo.png" class="navImages blackenImage">
+      <p id="signInButton" class="responsiveText"><a href="login.html">Sign In</a></p>
+      <p id="signOutButton" class="responsiveText" onclick="signOut()"><a href="">Sign Out</a></p>
     </div>
-    
-    <script>
-      function createBudgets() {
-        document.getElementById("createBudgetsHeader").addEventListener("click", function() {
-          if (document.getElementById("createBudgetDropdownContainer").style.display == "block") {
-            console.log("123");
-            document.getElementById("createBudgetDropdownContainer").style.display = "none";
-          } else {
-            document.getElementById("createBudgetDropdownContainer").style.display = "block";
-            console.log("123456");
-          }
-        })
-      }
-      
-      function popularBudgets() {
-        document.getElementById("popularBudgetsHeader").addEventListener("click", function() {
-          if (document.getElementById("popularBudgetDropdownContainer").style.display == "block") {
-            console.log("123");
-            document.getElementById("popularBudgetDropdownContainer").style.display = "none";
-          } else {
-            document.getElementById("popularBudgetDropdownContainer").style.display = "block";
-            console.log("123456");
-          }
-        })
-      }
-      
-      createBudgets();
-      popularBudgets();
-    </script>
-  </body>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+  <script src="./scripts/app-config.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+  <script src="./scripts/app.js"></script>
+  
+  <script>
+    function createBudgets() {
+      document.getElementById("createBudgetsHeader").addEventListener("click", function () {
+        if (document.getElementById("createBudgetDropdownContainer").style.display == "block") {
+          console.log("123");
+          document.getElementById("createBudgetDropdownContainer").style.display = "none";
+        } else {
+          document.getElementById("createBudgetDropdownContainer").style.display = "block";
+          console.log("123456");
+        }
+      })
+    }
+
+    function popularBudgets() {
+      document.getElementById("popularBudgetsHeader").addEventListener("click", function () {
+        if (document.getElementById("popularBudgetDropdownContainer").style.display == "block") {
+          console.log("123");
+          document.getElementById("popularBudgetDropdownContainer").style.display = "none";
+        } else {
+          document.getElementById("popularBudgetDropdownContainer").style.display = "block";
+          console.log("123456");
+        }
+      })
+    }
+
+    createBudgets();
+    popularBudgets();
+  </script>
+</body>
+
 </html>

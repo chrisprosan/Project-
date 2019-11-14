@@ -18,6 +18,18 @@
     <script src="https://cdn.firebase.com/libs/firebaseui/4.2.0/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/4.2.0/firebaseui.css" />
 
+    <link type="text/css" rel="stylesheet" href="style/landing-page.css">
+
+    <style>
+        #header {
+            background-image: url("images/MP3_Skepta-Pure_Water_Single_2018_iTunes_Plus_AAC_M4A.jpg");
+            background-size: cover;
+
+            filter: drop-shadow(0px 10px 5px blue);
+            border: 1px solid black;
+        }
+    </style>
+
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
@@ -28,20 +40,7 @@
     <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
 
-    <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyAKIQ82Oqhr_IRKYJYcss8QGEg8DEtHNWQ",
-            authDomain: "project-20db7.firebaseapp.com",
-            databaseURL: "https://project-20db7.firebaseio.com",
-            projectId: "project-20db7",
-            storageBucket: "project-20db7.appspot.com",
-            messagingSenderId: "1098873986764",
-            appId: "1:1098873986764:web:f6216c9a33f71b741e6c69"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-    </script>
+    <script src="./scripts/app-config.js"></script>
 
     <script type="text/javascript">
         // Initialize the FirebaseUI Widget using Firebase.
@@ -87,9 +86,40 @@
 <body>
     <!-- The surrounding HTML is left untouched by FirebaseUI.
          Your app may use that space for branding, controls and other customizations.-->
-    <h1>Welcome to My Awesome App</h1>
-    <div id="firebaseui-auth-container"></div>
-    <div id="loader">Loading...</div>
+    <div id="container">
+        <div id="parent_div" class="parentElement">
+            <div id="header" class="childElement">
+                <div id="blueFiltered"></div>
+            </div>
+            <div id="headerContainer">
+                <div id="topBar">
+                    <a href="LandingPage2.html"><img id="logo" class="topBarImage"
+                            src="images/Logos/8862_Cash%20Flows_A_03.png" style="filter: opacity(90%)"></a>
+                    <!--
+        
+                  <img id="burgerMenu" class="topBarImage" src="images/Menu-512.png">
+        
+        -->
+                    <img id="settingsMenu" class="topBarImage blackenImage" src="images/Icon-04-512.png">
+                </div>
+                <!--
+                <div id="navBar">
+                  <ul id="navBarList">
+                    <li><a><b>Budgets</b></a></li>
+                    <li><a><b>Transactions</b></a></li>
+                    <li id="signInButton"><a onclick="signIn()"><b>Sign In</b></a></li>
+                    <li id="signOutButton"><a onclick="signOut()"><b>Sign Out</b></a></li>
+                  </ul>
+                </div>
+        -->
+                <div id="firebaseui-auth-container">
+                    <p id="titleText">Cash Flows</p>
+                    <p id="welcomeText">Welcome!</p>
+                </div>
+                <div id="loader">Loading...</div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

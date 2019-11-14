@@ -240,15 +240,11 @@ a:hover {
   display: block;
 }
 
-#accountsButton {
-
-}
-
 a {
   color: black;
   text-decoration: none;
 }
 
-a:hover {
+#AccountsButton:hover, a:hover {
   color: white;
 }
