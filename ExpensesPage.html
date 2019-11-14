@@ -9,83 +9,6 @@
     <link type="text/css" rel="stylesheet" href="style/expenses-page.css">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    
-    <script>
-      function createDoc() {
-        var body = document.createElement("body");
-        $("html").append(body);
-      }
-      
-      function createHeader() {
-        var container = document.createElement("div");
-        container.setAttribute("id", "parent_div");
-        var parent_div = document.createElement("div");
-        parent_div.setAttribute("class", "parentElement");
-        var header = document.createElement("div");
-        header.setAttribute("class", "childElement");
-        var blueFiltered = document.createElement("div");
-        blueFiltered.setAttribute("id", "blueFiltered");
-        
-        $("body").append(container);
-        $("#container").append(parent_div);
-        $("#parent_div").append(header);
-        $(".childElement").append(blueFiltered);
-        
-        var headerContainer = document.createElement("div");
-        headerContainer.setAttribute("id", "headerContainer");
-        var topBar = document.createElement("div");
-        topBar.setAttribute("id", "topBar");
-        var homeLink = document.createElement("a");
-        homeLink.setAttribute("id", "homeLink");
-        var logo = document.createElement("img");
-        logo.setAttribute("id", "logo");
-        logo.setAttribute("class", "topBarImage");
-        var settingsMenu = document.createElement("div");
-        settingsMenu.setAttribute("id", "settingsMenu");
-        settingsMenu.setAttribute("class", "topBarImage blackenImage");
-        
-        $("#parent_div").append(headerContainer, topBar);
-        $("#topBar").append(homeLink, settingsMenu);
-        $("#homeLink").append(logo);
-      }
-      
-      function createContent() {
-        var content = document.createElement("div");
-        content.setAttribute("id", "content");
-        var title = document.createElement("div");
-        title.setAttribute("id", "title");
-        var plus = document.createElement("img");
-        plus.setAttribute("id", "plus");
-        var spendingLogHeader = document.createElement("p");
-        spendingLogHeader.setAttribute("id", "spendingLogHeader");
-        var filter = document.createElement("form");
-        filter.setAttribute("id", "filter");
-        var sort = document.createElement("input");
-        sort.setAttribute("id", "sort");
-        
-        $("body").append(content);
-        $("#content").append(title);
-        $("#title").append(plus, spendingLogHeader, filter);
-        $("#filter").append(sort);
-        
-        var spendingLog = document.createElement("div");
-        spendingLog.setAttribute("id", "spendingLog");
-        var transaction = document.createElement("div");
-        transaction.setAttribute("id", "transaction");
-        var timeStamp = document.createElement("p");
-        timeStamp.setAttribute("id", "timeStamp");
-        var date = document.createElement("p");
-        date.setAttribute("id", "date");
-        var itemPurchased = document.createElement("p");
-        itemPurchased.setAttribute("id", "itemPurchased");
-        var costAssociated = document.createElement("div");
-        costAssociated.setAttribute("id", "costAssociated");
-        
-        $("#content").append(spendingLog);
-        $("#spendingLog").append(transaction);
-        $("#transaction").append(timestamp, date, itemPurchased, costAssociated);
-      }
-    </script>
   </head>
   <body>
   <div id="container">
@@ -118,13 +41,13 @@
         <p class="timestamp">[16:30]</p>
         <p class="date">October 2, 2019</p>
         <p class="itemPurchased">Hot Chocolate</p>
-        <div class="costAssociated">-2.00 CAD</div>
+        <div class="costAssociated">-2.00 <span class="currencyType">CAD</span></div>
       </div>
       <div class="transaction">
         <p class="timestamp">[14:27]</p>
         <p class="date">September 30, 2019</p>
         <p class="itemPurchased">Groceries</p>
-        <div class="costAssociated">-60.49 CAD</div>
+        <div class="costAssociated">-60.49 <span class id="currencyType">CAD</span></div>
       </div>
     </div>
 

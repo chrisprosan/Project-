@@ -9,8 +9,7 @@
 
   padding: 2%;
   display: grid;
-
-  height: 12.5vw;
+  height: 125px;
 }
 
 #plus {
@@ -64,10 +63,6 @@
   line-height: 25%;
 }
 
-.activeCurrency {
-
-}
-
 .costAssociated {
  float: right; 
 
@@ -91,12 +86,12 @@
   background-color: white;
   border: 3px solid black;
   font-size: 2em;
-  margin: 15vw;
-  margin-top: -5vw;
   padding: 5vw;
   position: absolute;
+  left: 15vw;
+  right: 15vw;
   
-  top: -5vw;
+  top: -8vw;
   
   display: none;
 }
