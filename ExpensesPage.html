@@ -1,111 +1,93 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8">
-
-  <title>Budgets</title>
-
-  <link type="text/css" rel="stylesheet" href="style/landing-page.css">
-  <link type="text/css" rel="stylesheet" href="style/expenses-page.css">
-  <script>
-    function createDoc() {
-      var body = document.createElement("body");
-      $("html").append(body);
-    }
-
-    function createHeader() {
-      var container = document.createElement("div");
-      container.setAttribute("id", "parent_div");
-      var parent_div = document.createElement("div");
-      parent_div.setAttribute("class", "parentElement");
-      var header = document.createElement("div");
-      header.setAttribute("class", "childElement");
-      var blueFiltered = document.createElement("div");
-      blueFiltered.setAttribute("id", "blueFiltered");
-
-      $("body").append(container);
-      $("#container").append(parent_div);
-      $("#parent_div").append(header);
-      $(".childElement").append(blueFiltered);
-
-      var headerContainer = document.createElement("div");
-      headerContainer.setAttribute("id", "headerContainer");
-      var topBar = document.createElement("div");
-      topBar.setAttribute("id", "topBar");
-      var homeLink = document.createElement("a");
-      homeLink.setAttribute("id", "homeLink");
-      var logo = document.createElement("img");
-      logo.setAttribute("id", "logo");
-      logo.setAttribute("class", "topBarImage");
-      var settingsMenu = document.createElement("div");
-      settingsMenu.setAttribute("id", "settingsMenu");
-      settingsMenu.setAttribute("class", "topBarImage blackenImage");
-
-      $("#parent_div").append(headerContainer, topBar);
-      $("#topBar").append(homeLink, settingsMenu);
-      $("#homeLink").append(logo);
-    }
-
-    function createContent() {
-      var content = document.createElement("div");
-      content.setAttribute("id", "content");
-      var title = document.createElement("div");
-      title.setAttribute("id", "title");
-      var plus = document.createElement("img");
-      plus.setAttribute("id", "plus");
-      var spendingLogHeader = document.createElement("p");
-      spendingLogHeader.setAttribute("id", "spendingLogHeader");
-      var filter = document.createElement("form");
-      filter.setAttribute("id", "filter");
-      var sort = document.createElement("input");
-      sort.setAttribute("id", "sort");
-
-      $("body").append(content);
-      $("#content").append(title);
-      $("#title").append(plus, spendingLogHeader, filter);
-      $("#filter").append(sort);
-
-      var spendingLog = document.createElement("div");
-      spendingLog.setAttribute("id", "spendingLog");
-      var transaction = document.createElement("div");
-      transaction.setAttribute("id", "transaction");
-      var timeStamp = document.createElement("p");
-      timeStamp.setAttribute("id", "timeStamp");
-      var date = document.createElement("p");
-      date.setAttribute("id", "date");
-      var itemPurchased = document.createElement("p");
-      itemPurchased.setAttribute("id", "itemPurchased");
-      var costAssociated = document.createElement("div");
-      costAssociated.setAttribute("id", "costAssociated");
-
-      $("#content").append(spendingLog);
-      $("#spendingLog").append(transaction);
-      $("#transaction").append(timestamp, date, itemPurchased, costAssociated);
-
-
-      /*<div id="spendingLog">
-          <div class="transaction">
-            <p class="timestamp">[16:30] - 
-              <span class="date">October 2, 2019</span>
-            </p>
-            <p class="itemPurchased">Hot Chocolate</p>
-            <div class="costAssociated">-2.00 
-              <span class="activeCurrency">CAD</span>
-            </div>
-          </div>
-          <div class="transaction">
-            <p class="timestamp">[14:27] - <span class="date">September 30, 2019</span></p>
-            <p class="itemPurchased">Groceries</p>
-            <div class="costAssociated">-60.49 <span class="activeCurrency">CAD</span></div>
-          </div>
-        </div>
-        */
-    }
-  </script>
-</head>
-
-<body>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>Budgets</title>
+    
+    <link type="text/css" rel="stylesheet" href="style/landing-page.css">
+    <link type="text/css" rel="stylesheet" href="style/expenses-page.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <script>
+      function createDoc() {
+        var body = document.createElement("body");
+        $("html").append(body);
+      }
+      
+      function createHeader() {
+        var container = document.createElement("div");
+        container.setAttribute("id", "parent_div");
+        var parent_div = document.createElement("div");
+        parent_div.setAttribute("class", "parentElement");
+        var header = document.createElement("div");
+        header.setAttribute("class", "childElement");
+        var blueFiltered = document.createElement("div");
+        blueFiltered.setAttribute("id", "blueFiltered");
+        
+        $("body").append(container);
+        $("#container").append(parent_div);
+        $("#parent_div").append(header);
+        $(".childElement").append(blueFiltered);
+        
+        var headerContainer = document.createElement("div");
+        headerContainer.setAttribute("id", "headerContainer");
+        var topBar = document.createElement("div");
+        topBar.setAttribute("id", "topBar");
+        var homeLink = document.createElement("a");
+        homeLink.setAttribute("id", "homeLink");
+        var logo = document.createElement("img");
+        logo.setAttribute("id", "logo");
+        logo.setAttribute("class", "topBarImage");
+        var settingsMenu = document.createElement("div");
+        settingsMenu.setAttribute("id", "settingsMenu");
+        settingsMenu.setAttribute("class", "topBarImage blackenImage");
+        
+        $("#parent_div").append(headerContainer, topBar);
+        $("#topBar").append(homeLink, settingsMenu);
+        $("#homeLink").append(logo);
+      }
+      
+      function createContent() {
+        var content = document.createElement("div");
+        content.setAttribute("id", "content");
+        var title = document.createElement("div");
+        title.setAttribute("id", "title");
+        var plus = document.createElement("img");
+        plus.setAttribute("id", "plus");
+        var spendingLogHeader = document.createElement("p");
+        spendingLogHeader.setAttribute("id", "spendingLogHeader");
+        var filter = document.createElement("form");
+        filter.setAttribute("id", "filter");
+        var sort = document.createElement("input");
+        sort.setAttribute("id", "sort");
+        
+        $("body").append(content);
+        $("#content").append(title);
+        $("#title").append(plus, spendingLogHeader, filter);
+        $("#filter").append(sort);
+        
+        var spendingLog = document.createElement("div");
+        spendingLog.setAttribute("id", "spendingLog");
+        var transaction = document.createElement("div");
+        transaction.setAttribute("id", "transaction");
+        var timeStamp = document.createElement("p");
+        timeStamp.setAttribute("id", "timeStamp");
+        var date = document.createElement("p");
+        date.setAttribute("id", "date");
+        var itemPurchased = document.createElement("p");
+        itemPurchased.setAttribute("id", "itemPurchased");
+        var costAssociated = document.createElement("div");
+        costAssociated.setAttribute("id", "costAssociated");
+        
+        $("#content").append(spendingLog);
+        $("#spendingLog").append(transaction);
+        $("#transaction").append(timestamp, date, itemPurchased, costAssociated);
+      }
+    </script>
+  </head>
+  <body>
   <div id="container">
     <div id="parent_div" class="parentElement">
       <div id="header" class="childElement">
@@ -114,10 +96,9 @@
       <div id="headerContainer">
         <div id="topBar">
           <a href="LandingPage2.html">
-            <img id="logo" class="topBarImage" src="images/Logos/8862_Cash%20Flows_A_03.png"
-              style="filter: opacity(90%)">
+            <img id="logo" class="topBarImage" src="images/Logos/8862_Cash%20Flows_A_03.png" style="filter: opacity(90%)">
           </a>
-          <img id="settingsMenu" class="topBarImage blackenImage" src="images/menu_setting_icon_158273.png">
+          <img id="settingsMenu" class="topBarImage blackenImage" src="images/Icon-04-512.png">
         </div>
       </div>
     </div>
@@ -140,9 +121,10 @@
         <div class="costAssociated">-2.00 CAD</div>
       </div>
       <div class="transaction">
-        <p class="timestamp">[14:27] - <span class="date">September 30, 2019</span></p>
+        <p class="timestamp">[14:27]</p>
+        <p class="date">September 30, 2019</p>
         <p class="itemPurchased">Groceries</p>
-        <div class="costAssociated">-60.49 <span class="activeCurrency">CAD</span></div>
+        <div class="costAssociated">-60.49 CAD</div>
       </div>
     </div>
 
@@ -164,8 +146,8 @@
         <p class="addTransFieldHeader"></p>
 
         <div id="buttonField">
-          <input type="button" id="add" class="button" value="Add Transaction!">
-          <input type="button" id="cancel" class="button" value="Cancel">
+          <input id="addTransaction" type="button" class="button" value="Add Transaction!">
+          <input id="cancel" type="button" class="button" value="Cancel">
         </div>
       </form>
     </div>
@@ -190,6 +172,32 @@
       <p id="signOutButton" class="responsiveText" onclick="signOut()"><a href="">Sign Out</a></p>
     </div>
   </div>
+    
+    <script>
+      function popupWindow() {
+        document.getElementById("plus").addEventListener("click", function() {
+          if (document.getElementById("addTransactionWindow").style.display == "block") {
+            console.log("Add Transaction Menu Hidden");
+            document.getElementById("addTransactionWindow").style.display = "none";
+          } else {
+            document.getElementById("addTransactionWindow").style.display = "block";
+            console.log("Add Transaction Menu Displayed");
+          }
+        })
+        
+        document.getElementById("cancel").addEventListener("click", function() {
+          if (document.getElementById("addTransactionWindow").style.display == "block") {
+            console.log("Add Transaction Menu Hidden");
+            document.getElementById("addTransactionWindow").style.display = "none";
+          } else {
+            document.getElementById("addTransactionWindow").style.display = "block";
+            console.log("Add Transaction Menu Displayed");
+          }
+        })
+      }
+      
+      popupWindow();
+    </script>
   <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
   <script src="./scripts/app-config.js"></script>
   <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>

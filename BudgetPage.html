@@ -21,10 +21,9 @@
         <div id="blueFiltered"></div>
       </div>
       <div id="headerContainer">
-        <div id="topBar">
-          <a href="LandingPage2.html"><img id="logo" class="topBarImage"
-              src="images/Logos/8862_Cash%20Flows_A_03.png"></a>
-          <img id="settingsMenu" class="topBarImage blackenImage" src="images/menu_setting_icon_158273.png">
+      <div id="topBar">
+          <a href="LandingPage2.html"><img id="logo" class="topBarImage" src="images/Logos/8862_Cash%20Flows_A_03.png"></a>
+          <img id="settingsMenu" class="topBarImage blackenImage" src="images/Icon-04-512.png">
         </div>
       </div>
     </div>
@@ -47,46 +46,45 @@
       </div>
       <!-- This holds all of the dropdowns down from "Create A Budget" -->
       <div id="createBudgetDropdownContainer">
+        <form>
         <div class="sideBySide dropdownHeader">
           <p class="label">Budget Name</p>
-          <form id="budgetNameSelector">
+          <div id="budgetNameSelector">
             <input id="budgetName" class="formSide" type="text" placeholder="-">
-          </form>
+          </div>
         </div>
         <div class="sideBySide dropdownHeader">
           <p class="label">Time Intervel</p>
-          <form id="timeIntervelSelector">
+          <div id="timeIntervelSelector">
             <input id="timeIntervel" class="formSide" type="text" placeholder="-">
-          </form>
+          </div>
         </div>
         <div class="sideBySide dropdownHeader">
           <p class="label">Currency</p>
-          <form id="currencySelector">
+          <div id="currencySelector">
             <input id="currency" class="formSide" type="text" placeholder="-">
-          </form>
+          </div>
         </div>
-        <!-- This holds the entire table -->
-        <div id="tableContainer">
-          <div id="table">
-            <div class="row">
-              <p class="headerCell cell">Catagories</p>
-              <p class="headerCell cell">Limit</p>
-              <p class="headerCell cell">Notify Me At</p>
+      <!-- This holds the entire table -->
+      <div id="tableContainer">
+        <div id="table">
+          <div class="row">
+            <p class="headerCell cell">Catagories</p>
+            <p class="headerCell cell">Limit</p>
+            <p class="headerCell cell">Notify Me At</p>
+          </div>
+          <div class="row">
+            <div id="addCatagory">
+              <input class="headerCell cell" placeholder="Add Catagory">
             </div>
-            <div class="row">
-              <div id="addCatagory">
-                <p class="headerCell cell">Add Catagory</p>
-                <div id="centerPlus">
-                  <img id="addCatagoryPlus" src="images/plus.png">
-                </div>
-              </div>
-              <p class="headerCell cell"></p>
-              <p class="headerCell cell"></p>
-            </div>
+            <input class="headerCell cell" placeholder="Total Limit">
+            <input class="headerCell cell" placeholder="Notification Limit">
           </div>
         </div>
         <input type="button" id="createBudgetButton" value="Create Budget!">
       </div>
+      <input type="submit" id="createBudgetButton" value="Create Budget!">
+      </form>
     </div>
     <!-- Popular Budgets Field -->
     <div id="popularBudgets">
@@ -187,35 +185,34 @@
   <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
   <script src="./scripts/app.js"></script>
-  
-  <script>
-    function createBudgets() {
-      document.getElementById("createBudgetsHeader").addEventListener("click", function () {
-        if (document.getElementById("createBudgetDropdownContainer").style.display == "block") {
-          console.log("123");
-          document.getElementById("createBudgetDropdownContainer").style.display = "none";
-        } else {
-          document.getElementById("createBudgetDropdownContainer").style.display = "block";
-          console.log("123456");
-        }
-      })
-    }
-
-    function popularBudgets() {
-      document.getElementById("popularBudgetsHeader").addEventListener("click", function () {
-        if (document.getElementById("popularBudgetDropdownContainer").style.display == "block") {
-          console.log("123");
-          document.getElementById("popularBudgetDropdownContainer").style.display = "none";
-        } else {
-          document.getElementById("popularBudgetDropdownContainer").style.display = "block";
-          console.log("123456");
-        }
-      })
-    }
-
-    createBudgets();
-    popularBudgets();
-  </script>
-</body>
-
+    
+    <script>
+      function createBudgets() {
+        document.getElementById("createBudgetsHeader").addEventListener("click", function() {
+          if (document.getElementById("createBudgetDropdownContainer").style.display == "block") {
+            console.log("Create Budgets Widget Hidden");
+            document.getElementById("createBudgetDropdownContainer").style.display = "none";
+          } else {
+            document.getElementById("createBudgetDropdownContainer").style.display = "block";
+            console.log("Create Budgets Widget Shown");
+          }
+        })
+      }
+      
+      function popularBudgets() {
+        document.getElementById("popularBudgetsHeader").addEventListener("click", function() {
+          if (document.getElementById("popularBudgetDropdownContainer").style.display == "block") {
+            console.log("Popular Budgets Widget Hidden");
+            document.getElementById("popularBudgetDropdownContainer").style.display = "none";
+          } else {
+            document.getElementById("popularBudgetDropdownContainer").style.display = "block";
+            console.log("Popular Budgets Widget Shown");
+          }
+        })
+      }
+      
+      createBudgets();
+      popularBudgets();
+    </script>
+  </body>
 </html>
