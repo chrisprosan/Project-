@@ -1,3 +1,30 @@
+#dropdownHover {
+  line-height: 100%;
+  cursor: pointer;
+}
+
+#dropdownContents {
+  display: none;
+}
+
+.dropdownContent {
+  position: relative;
+  background-color: #f9f9f9;
+
+  min-width: 50%;
+  
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 8px 12px;
+  z-index: 1;
+  list-style-type: none;
+}
+
+.dropdownContent:hover {
+  background-color: blue;
+  color: white;
+  border: 1px solid black;
+}
+
 #title {
   text-align: center;
 
@@ -9,26 +36,22 @@
 
   padding: 2%;
   display: grid;
-  height: 125px;
+  grid-template-columns: auto 75% 25%;
+  height: 128px;
 }
 
 #plus {
   height: 128px;
-  position: absolute;
-  left: 1.8vw;
-  top: 1.8vw;
   border: 1px solid black;
 }
 
 #spendingLogHeader {
-  position: absolute;
-  top: 3vw;
-  right: 40vw;
+text-align: center;
+  font-size: 1.2em;
 }
 
 #filter {
-  position: absolute;
-  right: 1.8vw;
+  transform: translateX(-90%);
 }
 
 #sort {
@@ -72,14 +95,6 @@
 .itemPurchased {
   float: left; 
   font-size: 1.2em;
-}
-
-.timestamp {
-
-}
-
-.date {
-
 }
 
 #addTransactionWindow {

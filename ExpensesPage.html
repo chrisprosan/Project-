@@ -32,23 +32,15 @@
       <img id="plus" src="images/plus.png">
       <p id="spendingLogHeader">Spending Log</p>
       <form id="filter">
-        <input id="sort" type="text" placeholder="Sort">
+        <div id="dropdown">
+          <ul id="dropdownHover">Sort By
+            <div id="dropdownContents">
+              <li class="dropdownContent">Most Recent</li>
+              <li class="dropdownContent">Most Expensive</li>
+          </div>
+          </ul>
+        </div>
       </form>
-    </div>
-
-    <div id="spendingLog">
-      <div class="transaction">
-        <p class="timestamp">[16:30]</p>
-        <p class="date">October 2, 2019</p>
-        <p class="itemPurchased">Hot Chocolate</p>
-        <div class="costAssociated">-2.00 <span class="currencyType">CAD</span></div>
-      </div>
-      <div class="transaction">
-        <p class="timestamp">[14:27]</p>
-        <p class="date">September 30, 2019</p>
-        <p class="itemPurchased">Groceries</p>
-        <div class="costAssociated">-60.49 <span class id="currencyType">CAD</span></div>
-      </div>
     </div>
 
     <div id="addTransactionWindow">
