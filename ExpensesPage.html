@@ -95,32 +95,7 @@
       <p id="signOutButton" class="responsiveText" onclick="signOut()"><a href="">Sign Out</a></p>
     </div>
   </div>
-    
-    <script>
-      function popupWindow() {
-        document.getElementById("plus").addEventListener("click", function() {
-          if (document.getElementById("addTransactionWindow").style.display == "block") {
-            console.log("Add Transaction Menu Hidden");
-            document.getElementById("addTransactionWindow").style.display = "none";
-          } else {
-            document.getElementById("addTransactionWindow").style.display = "block";
-            console.log("Add Transaction Menu Displayed");
-          }
-        })
-        
-        document.getElementById("cancel").addEventListener("click", function() {
-          if (document.getElementById("addTransactionWindow").style.display == "block") {
-            console.log("Add Transaction Menu Hidden");
-            document.getElementById("addTransactionWindow").style.display = "none";
-          } else {
-            document.getElementById("addTransactionWindow").style.display = "block";
-            console.log("Add Transaction Menu Displayed");
-          }
-        })
-      }
-      
-      popupWindow();
-    </script>
+  <script src="https://unpkg.com/moment"></script>
   <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
   <script src="./scripts/app-config.js"></script>
   <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>

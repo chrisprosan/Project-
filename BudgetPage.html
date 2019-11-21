@@ -34,7 +34,7 @@
       <div id="activeBudgetsHeader" class="sideBySide dropdownHeader">
         <p class="label">Active Budget</p>
         <form id="activeBudgetsForm">
-          <input id="budgetName" class="formSide" type="text" placeholder="No Budgets Available">
+          <input id="budgetNameActive" class="formSide" value="" type="text" placeholder="No Budgets Available">
         </form>
       </div>
     </div>
@@ -69,16 +69,16 @@
       <div id="tableContainer">
         <div id="table">
           <div class="row">
-            <p class="headerCell cell">Catagories</p>
+            <p class="headerCell cell">Categories</p>
             <p class="headerCell cell">Limit</p>
             <p class="headerCell cell">Notify Me At</p>
           </div>
           <div class="row">
-            <div id="addCatagory">
-              <input class="headerCell cell" placeholder="Add Catagory">
+            <div id="addCategory">
+              <input id="category" class="headerCell cell" placeholder="Add Category">
             </div>
-            <input class="headerCell cell" placeholder="Total Limit">
-            <input class="headerCell cell" placeholder="Notification Limit">
+            <input id="limit" class="headerCell cell" placeholder="Total Limit">
+            <input id="notify" class="headerCell cell" placeholder="Notification Limit">
           </div>
         </div>
         <input type="button" id="createBudgetButton" value="Create Budget!">
@@ -184,34 +184,6 @@
   <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
   <script src="./scripts/app.js"></script>
-    
-    <script>
-      function createBudgets() {
-        document.getElementById("createBudgetsHeader").addEventListener("click", function() {
-          if (document.getElementById("createBudgetDropdownContainer").style.display == "block") {
-            console.log("Create Budgets Widget Hidden");
-            document.getElementById("createBudgetDropdownContainer").style.display = "none";
-          } else {
-            document.getElementById("createBudgetDropdownContainer").style.display = "block";
-            console.log("Create Budgets Widget Shown");
-          }
-        })
-      }
-      
-      function popularBudgets() {
-        document.getElementById("popularBudgetsHeader").addEventListener("click", function() {
-          if (document.getElementById("popularBudgetDropdownContainer").style.display == "block") {
-            console.log("Popular Budgets Widget Hidden");
-            document.getElementById("popularBudgetDropdownContainer").style.display = "none";
-          } else {
-            document.getElementById("popularBudgetDropdownContainer").style.display = "block";
-            console.log("Popular Budgets Widget Shown");
-          }
-        })
-      }
-      
-      createBudgets();
-      popularBudgets();
-    </script>
+  <script src="./scripts/budget.js"></script>
   </body>
 </html>
