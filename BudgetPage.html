@@ -42,7 +42,8 @@
           </ul>
         </div>
       </div>
-    </div>
+    
+  </div>
 
     <!-- Create A Budget Field -->
     <div id="createBudgets">
@@ -99,8 +100,15 @@
       <div id="popularBudgetDropdownContainer">
         <div class="sideBySide dropdownHeader">
           <p class="label">Sort By</p>
-          <form id="sortBySelector">
-            <input id="sortBy" class="formSide" type="text" placeholder="Highest Rated">
+          <form id="filter2">
+            <div id="dropdown2">
+              <ul id="dropdownHover2">---
+                <div id="dropdownContents2">
+                  <li class="dropdownContent">Most Popular</li>
+                  <li class="dropdownContent">Highest Total</li>
+                </div>
+              </ul>
+            </div>
           </form>
         </div>
         <!-- This is one budget -->
@@ -155,13 +163,14 @@
       <p id="signOutButton" class="responsiveText" onclick="signOut()"><a href="">Sign Out</a></p>
     </div>
   </div>
+  </div>
   <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
   <script src="./scripts/app-config.js"></script>
   <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
   <script src="./scripts/app.js"></script>
-    
+  <script src="./scripts/createPopBudgets.js"></script>
     <script>
       function createBudgets() {
         document.getElementById("createBudgetsHeader").addEventListener("click", function() {
@@ -187,7 +196,7 @@
         })
       }
 
-      function dropdown() {
+      function dropdownSelection() {
         document.getElementById("dropdown").addEventListener("click", function() {
           if (document.getElementById("dropdownContents").style.display == "block") {
             console.log("Dropdown Collapsed");
@@ -199,9 +208,23 @@
         })
       }
       
+      function dropdownSortBy() {
+        document.getElementById("dropdown2").addEventListener("click", function() {
+          if (document.getElementById("dropdownContents2").style.display == "block") {
+            console.log("Dropdown Collapsed");
+            document.getElementById("dropdownContents2").style.display = "none";
+          } else {
+            document.getElementById("dropdownContents2").style.display = "block";
+            console.log("Dropdown Expanded");
+          }
+        })
+      }
+      
       createBudgets();
       popularBudgets();
-      dropdown();
+      dropdownSelection();
+      dropdownSortBy();
+      
     </script>
   </body>
 </html>

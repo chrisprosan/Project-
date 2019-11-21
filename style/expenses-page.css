@@ -36,7 +36,7 @@
 
   padding: 2%;
   display: grid;
-  grid-template-columns: auto 80% 20%;
+  grid-template-columns: auto 75% 25%;
   height: 128px;
 }
 

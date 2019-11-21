@@ -7,7 +7,6 @@ const cost = document.querySelector("#cost");
 const note = document.querySelector("#notes");
 const myBudget = document.querySelector("#activeBudget");
 
-
 firebase.auth().onAuthStateChanged(function (user) {
     if (user != null) {
       // User is signed in.
