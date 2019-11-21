@@ -33,16 +33,21 @@
     <div id="activeBudgets">
       <div id="activeBudgetsHeader" class="sideBySide dropdownHeader">
         <p class="label">Active Budget</p>
-        <form id="activeBudgetsForm">
-          <input id="budgetName" class="formSide" type="text" placeholder="No Budgets Available">
-        </form>
+        <div id="dropdown">
+          <ul id="dropdownHover">Project X
+            <div id="dropdownContents">
+              <li class="dropdownContent">Budget Y</li>
+              <li class="dropdownContent">Budget Z</li>
+          </div>
+          </ul>
+        </div>
       </div>
     </div>
 
     <!-- Create A Budget Field -->
     <div id="createBudgets">
       <div id="createBudgetsHeader" class="dropdownHeader">
-        <p id="hello">Create A Budget</p>
+        <p>Create A Budget</p>
       </div>
       <!-- This holds all of the dropdowns down from "Create A Budget" -->
       <div id="createBudgetDropdownContainer">
@@ -81,7 +86,7 @@
             <input class="headerCell cell" placeholder="Notification Limit">
           </div>
         </div>
-        <input type="button" id="createBudgetButton" value="Create Budget!">
+        <input type="button" id="createBudgetButton" value="Create Budget">
       </div>
       </form>
     </div>
@@ -105,26 +110,11 @@
               <p id="name">Broke College Student Budget</p>
               <p id="creator">BCITStudent1239</p>
             </div>
-            <div id="stars">
-              <img class="star" src="images/pngtree-star-icon-element-clipart-png-image_1628648.jpg">
-              <img class="star" src="images/pngtree-star-icon-element-clipart-png-image_1628648.jpg">
-              <img class="star" src="images/pngtree-star-icon-element-clipart-png-image_1628648.jpg">
-              <img class="star" src="images/pngtree-star-icon-element-clipart-png-image_1628648.jpg">
-            </div>
           </div>
           <div id="popBudgetSpace">
             <div id="popBudgetText">
-              <p>Hello</p>
-              <p>Here</p>
-              <p>Is</p>
-              <p>Some</p>
-              <p>Text</p>
-              <p>About</p>
-              <p>The</p>
-              <p>Pictured</p>
-              <p>Chart</p>
+              <p>Hello here is some info about the budget.</p>
             </div>
-            <img class="pieChart" src="images/pie-chart-computer-icons-diagram-charts.png">
           </div>
           <input type="button" id="addToLibraryButton" value="Add to Library">
         </div>
@@ -135,24 +125,11 @@
               <p id="name">Rich Ivy League Student Budget</p>
               <p id="creator">HarvardCalls983</p>
             </div>
-            <div id="stars">
-              <img class="star" src="images/pngtree-star-icon-element-clipart-png-image_1628648.jpg">
-              <img class="star" src="images/pngtree-star-icon-element-clipart-png-image_1628648.jpg">
-            </div>
           </div>
           <div id="popBudgetSpace">
             <div id="popBudgetText">
-              <p>Hello</p>
-              <p>Here</p>
-              <p>Is</p>
-              <p>Some</p>
-              <p>Text</p>
-              <p>About</p>
-              <p>The</p>
-              <p>Pictured</p>
-              <p>Chart</p>
+              <p>Hello here is some text about the budget.</p>
             </div>
-            <img class="pieChart" src="images/pie-chart-computer-icons-diagram-charts.png">
           </div>
           <input type="button" id="addToLibraryButton" value="Add to Library">
         </div>
@@ -209,9 +186,22 @@
           }
         })
       }
+
+      function dropdown() {
+        document.getElementById("dropdown").addEventListener("click", function() {
+          if (document.getElementById("dropdownContents").style.display == "block") {
+            console.log("Dropdown Collapsed");
+            document.getElementById("dropdownContents").style.display = "none";
+          } else {
+            document.getElementById("dropdownContents").style.display = "block";
+            console.log("Dropdown Expanded");
+          }
+        })
+      }
       
       createBudgets();
       popularBudgets();
+      dropdown();
     </script>
   </body>
 </html>

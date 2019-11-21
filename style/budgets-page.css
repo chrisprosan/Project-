@@ -11,6 +11,20 @@
   grid-template-columns: auto auto;
 }
 
+.formSide {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1em;
+  font-family: "Josefin Sans", sans-serif;
+
+  vertical-align: bottom;
+  line-height: 20px;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
 .dropdownHeader {
   text-align: center;
 
@@ -29,18 +43,36 @@
   cursor: pointer;
 }
 
-.formSide {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1em;
-  font-family: "Josefin Sans", sans-serif;
+#activeBudgets {
+}
 
-  vertical-align: bottom;
-  line-height: 20px;
-  width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
+#dropdownHover {
+  line-height: 150%;
+  float: left;
+  
+  cursor: pointer;
+}
+
+#dropdownContents {
+  display: none;
+}
+
+.dropdownContent {
+  position: relative;
+  background-color: #f9f9f9;
+  
+min-width: 150%;
+
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 8px 4px;
+  z-index: 1;
+  list-style-type: none;
+}
+
+.dropdownContent:hover {
+  background-color: blue;
+  color: white;
+  border: 1px solid black;
 }
 
 #tableContainer {
@@ -86,7 +118,7 @@
 .regCell {
   font-size: 1em;
   text-align: center;
-    width: 95%;
+  width: 95%;
 }
 
 #addCatagory {
@@ -138,6 +170,7 @@
 .label {
   width: 40vw;
   margin-left: 10vw; 
+  line-height: 150%;
 }
 
 #popularBudgetsContainer {
@@ -148,48 +181,16 @@
   font-family: "Josefin Sans", sans-serif;
 
   padding: 3%;
-}
 
-#popBudgetHeader {
-  display: grid;
-  grid-template-columns: 60% 40%;
-}
-
-#popBudgetSpace {
-  display: grid;
-  grid-template-columns: 60% 40%;
-}
-
-#popBudgetText {
-  line-height: 25%;
-}
-
-.pieChart {
-  width: 100%;
-}
-
-#stars {
-  display: grid;
-  grid-template-columns: 20% 20% 20% 20% 20%;
-}
-
-.star {
-  width: 100%;
-}
-
-#creation {
-  display: grid;
-  grid-template-rows: 40% 60%;
-
-  line-height: 25%;
+  grid-template-columns: 50% 50%;
 }
 
 #name {
   font-size: 1em;
-  transform: translateY(-1vw);
 }
 
 #creator {
+  transform: translateY(-2vw);
   font-size: 0.8em;
 }
 
@@ -204,7 +205,7 @@
   color: white;
 
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1em;
   font-family: "Josefin Sans", sans-serif;
 
   cursor: pointer; 
