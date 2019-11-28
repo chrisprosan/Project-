@@ -29,47 +29,6 @@ firebase.auth().onAuthStateChanged(function (user) {
     var userRef = db.collection("users").doc(uid);
     var transacRef = userRef.collection("transactions");
 
-    transacRef.onSnapshot(function (querySnapshot) {
-      var transaction = [];
-      querySnapshot.forEach(function (doc) {
-        transaction.push(doc.data());
-
-      });
-
-      transaction.sort(function(a,b){
-        return new Date(b.time.toDate()) - new Date(a.time.toDate());
-      });
-      console.log(transaction);
-      for (x in transaction) {
-        let cost = transaction[x].cost;
-        let items = transaction[x].items;
-        let note = transaction[x].note;
-        let targetBudget = transaction[x].targetBudget;
-        var time = transaction[x].time.toDate();
-        var h = time.getHours();
-        var m = time.getMinutes();
-        var s = time.getSeconds();
-
-        h = checkTime(h);
-        m = checkTime(m);
-        s = checkTime(s);
-
-        var divTransaction = $("<div class='transaction'></div>");
-        var paraTimeStamp = $("<p class='timestamp'></p>");
-        var paraDate = $("<p class='date'></p>");
-        var paraItem = $("<p class='itemPurchased'></p>");
-        var divCost = $("<div class='costAssociated'></div>");
-
-
-        paraTimeStamp.html(h + ":" + m + ":" + s);
-        paraDate.html(time.toDateString());
-        paraItem.html(items);
-        divCost.html(cost);
-        divTransaction.append(paraTimeStamp, paraDate, paraItem, divCost);
-        $("#spendingLog").append(divTransaction);
-      }
-    });
-
     add.addEventListener("click", function () {
       if (addWindow.style.display == "block") {
         console.log("Add Transaction Menu Hidden");
@@ -93,7 +52,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     document.getElementById("signInButton").style.display = "none";
     document.getElementById("signOutButton").style.display = "inline-block";
 
-    addButton.addEventListener("click", function (e) {
+    addButton.addEventListener("click", function () {
       const itemSave = item.value;
       const costSave = cost.value;
       const noteSave = note.value;
@@ -108,12 +67,53 @@ firebase.auth().onAuthStateChanged(function (user) {
       }).then(function () {
         localStorage.setItem('budget', myBudgetSave);
         addWindow.style.display = "none";
-        console.log("Log complete at");
+        console.log("Log complete at " + new Date());
+        alert("New Transaction Added");
 
       }).catch(function (error) {
         console.log("Error: ", error);
 
       });
+    });
+    transacRef.onSnapshot(function (querySnapshot) {
+      var transaction = [];
+      querySnapshot.forEach(function (doc) {
+        transaction.push(doc.data());
+
+      });
+
+      transaction.sort(function(a,b){
+        return new Date(b.time.toDate()) - new Date(a.time.toDate());
+      });
+      console.log(transaction);
+      for (x in transaction) {
+        let cost = transaction[x].cost;
+        let items = transaction[x].items;
+        // let note = transaction[x].note;
+        // let targetBudget = transaction[x].targetBudget;
+        var time = transaction[x].time.toDate();
+        var h = time.getHours();
+        var m = time.getMinutes();
+        var s = time.getSeconds();
+
+        h = checkTime(h);
+        m = checkTime(m);
+        s = checkTime(s);
+
+        var divTransaction = $("<div class='transaction'></div>");
+        var paraTimeStamp = $("<p class='timestamp'></p>");
+        var paraDate = $("<p class='date'></p>");
+        var paraItem = $("<p class='itemPurchased'></p>");
+        var divCost = $("<div class='costAssociated'></div>");
+
+
+        paraTimeStamp.html(h + ":" + m + ":" + s);
+        paraDate.html(time.toDateString());
+        paraItem.html(items);
+        divCost.html(cost);
+        divTransaction.append(paraTimeStamp, paraDate, paraItem, divCost);
+        $("#spendingLog").append(divTransaction);
+      }
     });
   } else {
     document.getElementById("signInButton").style.display = "inline-block";

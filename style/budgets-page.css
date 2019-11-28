@@ -101,7 +101,7 @@
   font-family: "Josefin Sans", sans-serif;
 }
 
-.row {
+.row, .rowHeader {
   display: grid;
 
   grid-template-columns: 50% 20% 30%;
