@@ -63,15 +63,15 @@
       <!-- This holds the entire table -->
       <div id="tableContainer">
         <div id="table">
-          <div class="row">
+          <div class="rowHeader">
             <p class="headerCell cell">Categories</p>
             <p class="headerCell cell">Limit</p>
             <p class="headerCell cell">Notify Me At</p>
           </div>
           <div class="row">
-            <input class="headerCell cell" placeholder="Catagory">
-            <input class="headerCell cell" placeholder="Limit">
-            <input class="headerCell cell" placeholder="Notify Me At">
+            <input class="headerCell cell category" placeholder="Catagory">
+            <input class="headerCell cell limit" placeholder="Limit">
+            <input class="headerCell cell notify" placeholder="Notify Me At">
           </div>
           <img src="images/plus.png" id="plus">
         </div>
@@ -164,7 +164,7 @@
   <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
   <script src="./scripts/app.js"></script>
-    
+  <script src="./scripts/budget.js"></script>
     <script>
       function createBudgets() {
         document.getElementById("createBudgetsHeader").addEventListener("click", function() {
