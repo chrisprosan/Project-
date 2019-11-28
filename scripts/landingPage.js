@@ -1,3 +1,5 @@
+var db = firebase.firestore();
+
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       // User is signed in.
@@ -7,6 +9,21 @@ firebase.auth().onAuthStateChanged(function (user) {
       var isAnonymous = user.isAnonymous;
       var uid = user.uid;
 
+      var userRef = db.collection("users").doc(uid);
+      userRef.set({
+        email: email,
+        name: displayName
+      })
+      // var myBudget = localStorage.getItem("budget");
+      // if (myBudget != null) {
+      //   userRef.set({
+      //     activeBudget: myBudget
+      //   });
+      // } else {
+      //   userRef.set({
+      //     activeBudget: "none"
+      //   });
+      // }
       document.getElementById("welcomeText").innerHTML = "Welcome, " + displayName;
       // ...
     } else {
