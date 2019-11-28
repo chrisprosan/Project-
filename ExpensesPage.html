@@ -43,10 +43,10 @@
       <p id="addTransHeader">Create A Transaction!</p>
       <form>
         <p class="addTransFieldHeader">What Did You Buy?</p>
-        <input class="addTransFieldInput" id="items" type="text" placeholder="What?">
+        <input class="addTransFieldInput" id="items" type="text" placeholder="What?" required="required">
 
         <p class="addTransFieldHeader">How Much Was It?</p>
-        <input class="addTransFieldInput" id="cost" type="text" placeholder="How Much?">
+        <input class="addTransFieldInput" id="cost" type="text" placeholder="How Much?" required="required">
 
         <p class="addTransFieldHeader">Anything You Want to Say?</p>
         <input class="addTransFieldInput" id="notes" type="text" placeholder="Notes?">
@@ -57,7 +57,7 @@
         <p class="addTransFieldHeader"></p>
 
         <div id="buttonField">
-          <input id="addTransaction" type="button" class="button" value="Add Transaction!">
+          <input id="addTransaction" type="submit" class="button" value="Add Transaction!">
           <input id="cancel" type="button" class="button" value="Cancel">
         </div>
       </form>
@@ -90,42 +90,42 @@
   </datalist>  
     
     <script>
-      function popupWindow() {
-        document.getElementById("plus").addEventListener("click", function() {
-          if (document.getElementById("addTransactionWindow").style.display == "block") {
-            console.log("Add Transaction Menu Hidden");
-            document.getElementById("addTransactionWindow").style.display = "none";
-          } else {
-            document.getElementById("addTransactionWindow").style.display = "block";
-            console.log("Add Transaction Menu Displayed");
-          }
-        })
+      // function popupWindow() {
+      //   document.getElementById("plus").addEventListener("click", function() {
+      //     if (document.getElementById("addTransactionWindow").style.display == "block") {
+      //       console.log("Add Transaction Menu Hidden");
+      //       document.getElementById("addTransactionWindow").style.display = "none";
+      //     } else {
+      //       document.getElementById("addTransactionWindow").style.display = "block";
+      //       console.log("Add Transaction Menu Displayed");
+      //     }
+      //   })
         
-        document.getElementById("cancel").addEventListener("click", function() {
-          if (document.getElementById("addTransactionWindow").style.display == "block") {
-            console.log("Add Transaction Menu Hidden");
-            document.getElementById("addTransactionWindow").style.display = "none";
-          } else {
-            document.getElementById("addTransactionWindow").style.display = "block";
-            console.log("Add Transaction Menu Displayed");
-          }
-        })
-      }
+      //   document.getElementById("cancel").addEventListener("click", function() {
+      //     if (document.getElementById("addTransactionWindow").style.display == "block") {
+      //       console.log("Add Transaction Menu Hidden");
+      //       document.getElementById("addTransactionWindow").style.display = "none";
+      //     } else {
+      //       document.getElementById("addTransactionWindow").style.display = "block";
+      //       console.log("Add Transaction Menu Displayed");
+      //     }
+      //   })
+      // }
       
-      function dropdown() {
-        document.getElementById("dropdown").addEventListener("click", function() {
-          if (document.getElementById("dropdownContents").style.display == "block") {
-            console.log("Dropdown Collapsed");
-            document.getElementById("dropdownContents").style.display = "none";
-          } else {
-            document.getElementById("dropdownContents").style.display = "block";
-            console.log("Dropdown Expanded");
-          }
-        })
-      }
+      // function dropdown() {
+      //   document.getElementById("dropdown").addEventListener("click", function() {
+      //     if (document.getElementById("dropdownContents").style.display == "block") {
+      //       console.log("Dropdown Collapsed");
+      //       document.getElementById("dropdownContents").style.display = "none";
+      //     } else {
+      //       document.getElementById("dropdownContents").style.display = "block";
+      //       console.log("Dropdown Expanded");
+      //     }
+      //   })
+      // }
       
-      dropdown();
-      popupWindow();
+      // dropdown();
+      // popupWindow();
     </script>
   <script src="https://unpkg.com/moment"></script>
   <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
