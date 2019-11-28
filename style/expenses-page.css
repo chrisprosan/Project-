@@ -101,27 +101,31 @@ text-align: center;
 }
 
 #addTransactionWindow {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 5%;
+  
   background-color: white;
-  border: 3px solid black;
-  font-size: 2em;
-  padding: 5vw;
+  border: 2px solid black;
+  font-size: 1.85em;
   position: absolute;
   left: 15vw;
   right: 15vw;
-  
-  top: -8vw;
+  overflow-y: scroll; 
+  height: 65vh;
   
   display: none;
 }
 
 #addTransHeader {
   font-family: "Teko", sans-serif;
-  font-size: 3em;
+  font-size: 2.5em;
+  line-height: 50%;
 }
 
 .addTransFieldHeader {
   font-family: "Teko", sans-serif;
-  font-size: 2.25em;
+  font-size: 1.5em;
   line-height: 50%;
 }
 
@@ -146,6 +150,7 @@ text-align: center;
   font-family: "Josefin Sans", sans-serif;
 
   cursor: pointer;
+  
 }
 
 #buttonField {
@@ -153,6 +158,15 @@ text-align: center;
   grid-template-columns: auto auto;
 }
 
+#cancel {
+}
+
+#nonTransWindow {
+}
+
+.darken {
+  filter: brightness(20%);
+}
 
 .properDropdown {
   width: 90%;
@@ -163,4 +177,8 @@ text-align: center;
   
   font-size: 1.25em;
   overflow-x: scroll;
+}
+
+#AccountsButton:hover {
+  cursor: pointer;
 }

@@ -1,67 +1,48 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    
-    <title>Budgets</title>
-    
-    <link type="text/css" rel="stylesheet" href="style/landing-page.css">
-    <link type="text/css" rel="stylesheet" href="style/expenses-page.css">
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  </head>
-  <body>
-  <div id="container">
-    <div id="parent_div" class="parentElement">
-      <div id="header" class="childElement">
-        <div id="blueFiltered"></div>
-      </div>
-      <div id="headerContainer">
-        <div id="topBar">
-          <a href="index.html">
-            <img id="logo" class="topBarImage" src="images/Logos/8862_Cash%20Flows_A_03.png" style="filter: opacity(90%)">
-          </a>
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Budgets</title>
+
+  <link type="text/css" rel="stylesheet" href="style/landing-page.css">
+  <link type="text/css" rel="stylesheet" href="style/expenses-page.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="nonTransWindow" class="">
+    <div id="container">
+      <div id="parent_div" class="parentElement">
+        <div id="header" class="childElement">
+          <div id="blueFiltered"></div>
+        </div>
+        <div id="headerContainer">
+          <div id="topBar">
+            <a href="index.html">
+              <img id="logo" class="topBarImage" src="images/Logos/8862_Cash%20Flows_A_03.png"
+                style="filter: opacity(90%)">
+            </a>
+          </div>
         </div>
       </div>
     </div>
+
+    <div id="content">
+      <div id="title">
+        <img id="plus" src="images/plus.png">
+        <p id="spendingLogHeader">Spending Log</p>
+        <form id="filter">
+          <input list="sorting" class="properDropdown" placeholder="Sort By" style="padding-left: 0.25em;">
+        </form>
+      </div>
+      <div id="spendingLog"></div>
+
+    </div>
   </div>
 
-  <div id="content">
-    <div id="title">
-      <img id="plus" src="images/plus.png">
-      <p id="spendingLogHeader">Spending Log</p>
-      <form id="filter">
-        <input list="sorting" class="properDropdown" placeholder="Sort By" style="padding-left: 0.25em;">
-      </form>
-    </div>
-    <div id="spendingLog"></div>
-    
-
-    <div id="addTransactionWindow">
-      <p id="addTransHeader">Create A Transaction!</p>
-      <form>
-        <p class="addTransFieldHeader">What Did You Buy?</p>
-        <input class="addTransFieldInput" id="items" type="text" placeholder="What?">
-
-        <p class="addTransFieldHeader">How Much Was It?</p>
-        <input class="addTransFieldInput" id="cost" type="text" placeholder="How Much?">
-
-        <p class="addTransFieldHeader">Anything You Want to Say?</p>
-        <input class="addTransFieldInput" id="notes" type="text" placeholder="Notes?">
-
-        <p class="addTransFieldHeader">Which Budget Are You On?</p>
-        <input class="addTransFieldInput" id="activeBudget" type="text" placeholder="My Active Budget"
-          value="My Active Budget">
-        <p class="addTransFieldHeader"></p>
-
-        <div id="buttonField">
-          <input id="addTransaction" type="button" class="button" value="Add Transaction!">
-          <input id="cancel" type="button" class="button" value="Cancel">
-        </div>
-      </form>
-    </div>
-
-  </div>
   <div id="footer">
     <a href="BudgetPage.html">
       <div id="expensesButton">
@@ -81,50 +62,41 @@
       <p id="signOutButton" class="responsiveText" onclick="signOut()"><a href="">Sign Out</a></p>
     </div>
   </div>
-    
+  
+  <div id="addTransactionWindow">
+    <p id="addTransHeader">Create A Transaction!</p>
+    <form>
+      <p class="addTransFieldHeader">What Did You Buy?</p>
+      <input class="addTransFieldInput" id="items" type="text" placeholder="What?">
+
+      <p class="addTransFieldHeader">How Much Was It?</p>
+      <input class="addTransFieldInput" id="cost" type="text" placeholder="How Much?">
+
+      <p class="addTransFieldHeader">Anything You Want to Say?</p>
+      <input class="addTransFieldInput" id="notes" type="text" placeholder="Notes?">
+
+      <p class="addTransFieldHeader">Which Budget Are You On?</p>
+      <input list="budgets" class="properDropdown" placeholder="Active Budget" style="padding-left: 0.25em;">
+      <p class="addTransFieldHeader"></p>
+
+      <div id="buttonField">
+        <input id="addTransaction" type="button" class="button" value="Add Transaction!">
+        <input id="cancel" type="button" class="button" value="Cancel">
+      </div>
+    </form>
+  </div>
+  
   <datalist id="sorting">
     <option value="Recent">
     <option value="Cost">
-  </datalist>  
-    
-    <script>
-      function popupWindow() {
-        document.getElementById("plus").addEventListener("click", function() {
-          if (document.getElementById("addTransactionWindow").style.display == "block") {
-            console.log("Add Transaction Menu Hidden");
-            document.getElementById("addTransactionWindow").style.display = "none";
-          } else {
-            document.getElementById("addTransactionWindow").style.display = "block";
-            console.log("Add Transaction Menu Displayed");
-          }
-        })
-        
-        document.getElementById("cancel").addEventListener("click", function() {
-          if (document.getElementById("addTransactionWindow").style.display == "block") {
-            console.log("Add Transaction Menu Hidden");
-            document.getElementById("addTransactionWindow").style.display = "none";
-          } else {
-            document.getElementById("addTransactionWindow").style.display = "block";
-            console.log("Add Transaction Menu Displayed");
-          }
-        })
-      }
-      
-      function dropdown() {
-        document.getElementById("dropdown").addEventListener("click", function() {
-          if (document.getElementById("dropdownContents").style.display == "block") {
-            console.log("Dropdown Collapsed");
-            document.getElementById("dropdownContents").style.display = "none";
-          } else {
-            document.getElementById("dropdownContents").style.display = "block";
-            console.log("Dropdown Expanded");
-          }
-        })
-      }
-      
-      dropdown();
-      popupWindow();
-    </script>
+  </datalist>
+  
+  <datalist id="budgets">
+    <option value="Project X">
+    <option value="Project Y">
+    <option value="Project Z">
+  </datalist>
+  
   <script src="https://unpkg.com/moment"></script>
   <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
   <script src="./scripts/app-config.js"></script>
