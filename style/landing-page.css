@@ -207,7 +207,7 @@ a:hover {
 }
 
 #content {
-  margin-bottom: 12.5vw;
+  padding-bottom: 12.5vw;
 
   min-height: 100vh;
   width: 100%;

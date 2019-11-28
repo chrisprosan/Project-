@@ -103,15 +103,16 @@ text-align: center;
 #addTransactionWindow {
   padding-left: 5%;
   padding-right: 5%;
-  padding-bottom: 5%;
+  padding-bottom: 2%;
   
   background-color: white;
   border: 2px solid black;
-  font-size: 1.85em;
+  font-size: 1.25em;
   position: absolute;
+  top: 0;
+  bottom: 0;
   left: 15vw;
   right: 15vw;
-  overflow-y: scroll; 
   height: 65vh;
   
   display: none;
@@ -156,6 +157,9 @@ text-align: center;
 #buttonField {
   display: grid;
   grid-template-columns: auto auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(50%);
 }
 
 #cancel {
