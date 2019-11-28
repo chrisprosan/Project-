@@ -43,9 +43,6 @@
   cursor: pointer;
 }
 
-#activeBudgets {
-}
-
 /* Sort by Dropdown */
 #dropdownHover {
   line-height: 150%;
@@ -180,6 +177,9 @@
   display: none;
 }
 
+#activeBudgets {
+}
+
 .label {
   width: 40vw;
   margin-left: 10vw; 
@@ -234,4 +234,42 @@
 
 .show {
   display: block;
+}
+
+#plus {
+  width: 5vh;
+  float: right;
+  border: 1px solid black;
+  margin-top: 2%;
+}
+
+#plus:hover {
+  cursor: pointer;
+}
+
+.properDropdown {
+  margin: 2vw;
+  padding: 0.5vw;
+  width: 90%;
+  height: 50%;
+  
+  color: black;
+  font-size: 1.25em;
+  text-align: center;
+  overflow-x: scroll;
+}
+
+.popularDropdown {
+  margin: 1vw;
+  width: 90%;
+  height: 50%;
+  
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  color: black;
+  font-size: 1.25em;
+  text-align: center;
+  overflow-x: scroll;
 }

@@ -9,9 +9,7 @@
   <link type="text/css" rel="stylesheet" href="style/landing-page.css">
   <link type="text/css" rel="stylesheet" href="style/budgets-page.css">
 
-  <script>
-
-  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -31,16 +29,8 @@
   <div id="content">
     <!-- Active Budgets Selector -->
     <div id="activeBudgets">
-      <div id="activeBudgetsHeader" class="sideBySide dropdownHeader">
-        <p class="label">Active Budget</p>
-        <div id="dropdown">
-          <ul id="dropdownHover">Project X
-            <div id="dropdownContents">
-              <li class="dropdownContent">Budget Y</li>
-              <li class="dropdownContent">Budget Z</li>
-          </div>
-          </ul>
-        </div>
+      <div id="activeBudgetsHeader" class="dropdownHeader">
+        <input list="budgets" class="properDropdown" placeholder="Active Budget">
       </div>
     
   </div>
@@ -80,12 +70,11 @@
             <p class="headerCell cell">Notify Me At</p>
           </div>
           <div class="row">
-            <div id="addCatagory">
-              <input class="headerCell cell" placeholder="Add Catagory">
-            </div>
-            <input class="headerCell cell" placeholder="Total Limit">
-            <input class="headerCell cell" placeholder="Notification Limit">
+            <input class="headerCell cell" placeholder="Catagory">
+            <input class="headerCell cell" placeholder="Limit">
+            <input class="headerCell cell" placeholder="Notify Me At">
           </div>
+          <img src="images/plus.png" id="plus">
         </div>
         <input type="button" id="createBudgetButton" value="Create Budget">
       </div>
@@ -101,14 +90,7 @@
         <div class="sideBySide dropdownHeader">
           <p class="label">Sort By</p>
           <form id="filter2">
-            <div id="dropdown2">
-              <ul id="dropdownHover2">---
-                <div id="dropdownContents2">
-                  <li class="dropdownContent">Most Popular</li>
-                  <li class="dropdownContent">Highest Total</li>
-                </div>
-              </ul>
-            </div>
+            <input list="sorting" class="popularDropdown">
           </form>
         </div>
         <!-- This is one budget -->
@@ -164,6 +146,19 @@
     </div>
   </div>
   </div>
+  
+  <datalist id="budgets">
+    <option value="Project X">
+    <option value="Project Y">
+    <option value="Project Z">
+  </datalist>
+  
+  <datalist id="sorting">
+    <option value="Uses">
+    <option value="Views">
+    <option value="Ratings">
+  </datalist>
+  
   <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
   <script src="./scripts/app-config.js"></script>
   <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
@@ -195,36 +190,32 @@
           }
         })
       }
-
-      function dropdownSelection() {
-        document.getElementById("dropdown").addEventListener("click", function() {
-          if (document.getElementById("dropdownContents").style.display == "block") {
-            console.log("Dropdown Collapsed");
-            document.getElementById("dropdownContents").style.display = "none";
-          } else {
-            document.getElementById("dropdownContents").style.display = "block";
-            console.log("Dropdown Expanded");
-          }
-        })
-      }
       
-      function dropdownSortBy() {
-        document.getElementById("dropdown2").addEventListener("click", function() {
-          if (document.getElementById("dropdownContents2").style.display == "block") {
-            console.log("Dropdown Collapsed");
-            document.getElementById("dropdownContents2").style.display = "none";
-          } else {
-            document.getElementById("dropdownContents2").style.display = "block";
-            console.log("Dropdown Expanded");
-          }
+      function appendRow() {
+        document.getElementById("plus").addEventListener("click", function() {
+          var row = document.createElement("div");
+          row.setAttribute("class", "row");
+          var catagory = document.createElement("input");
+          catagory.setAttribute("class", "headerCell cell");
+          catagory.setAttribute("placeholder", "Catagory");
+          
+          var limit = document.createElement("input");
+          limit.setAttribute("class", "headerCell cell");
+          limit.setAttribute("placeholder", "Limit");
+          
+          var notif = document.createElement("input");
+          notif.setAttribute("class", "headerCell cell");
+          notif.setAttribute("placeholder", "Notify Me At");
+           
+          $(".row").last().after(row);
+          $(".row").last().append(catagory, limit, notif);
+          console.log("Table Row Added");
         })
       }
       
       createBudgets();
       popularBudgets();
-      dropdownSelection();
-      dropdownSortBy();
-      
-    </script>
+      appendRow();  
+  </script>
   </body>
 </html>

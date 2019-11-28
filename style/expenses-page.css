@@ -36,22 +36,25 @@
 
   padding: 2%;
   display: grid;
-  grid-template-columns: auto 75% 25%;
+  grid-template-columns: auto auto auto;
   height: 128px;
 }
 
 #plus {
   height: 128px;
   border: 1px solid black;
+  
+  margin-right: 1vw;
 }
 
 #spendingLogHeader {
 text-align: center;
   font-size: 1.2em;
+  margin-left: 1vw;
+  margin-right: 1vw;
 }
 
 #filter {
-  transform: translateX(-90%);
 }
 
 #sort {
@@ -148,4 +151,16 @@ text-align: center;
 #buttonField {
   display: grid;
   grid-template-columns: auto auto;
+}
+
+
+.properDropdown {
+  width: 90%;
+  height: 50%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  font-size: 1.25em;
+  overflow-x: scroll;
 }

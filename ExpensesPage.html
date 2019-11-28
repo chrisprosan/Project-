@@ -32,16 +32,11 @@
       <img id="plus" src="images/plus.png">
       <p id="spendingLogHeader">Spending Log</p>
       <form id="filter">
-        <div id="dropdown">
-          <ul id="dropdownHover">Sort By
-            <div id="dropdownContents">
-              <li class="dropdownContent">Most Recent</li>
-              <li class="dropdownContent">Most Expensive</li>
-          </div>
-          </ul>
-        </div>
+        <input list="sorting" class="properDropdown" placeholder="Sort By" style="padding-left: 0.25em;">
       </form>
     </div>
+    <div id="spendingLog"></div>
+    
 
     <div id="addTransactionWindow">
       <p id="addTransHeader">Create A Transaction!</p>
@@ -87,6 +82,11 @@
       <p id="signOutButton" class="responsiveText" onclick="signOut()"><a href="">Sign Out</a></p>
     </div>
   </div>
+    
+  <datalist id="sorting">
+    <option value="Recent">
+    <option value="Cost">
+  </datalist>  
     
     <script>
       function popupWindow() {
