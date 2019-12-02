@@ -247,6 +247,6 @@ a {
   text-decoration: none;
 }
 
-#AccountsButton:hover, a:hover {
+a:hover {
   color: white;
 }

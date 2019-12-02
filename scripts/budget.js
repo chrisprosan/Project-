@@ -22,8 +22,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     var userBudgetRef = userRef.collection("budget");
     var budgetRef = db.collection("budgets");
 
-    document.getElementById("signInButton").style.display = "none";
-    document.getElementById("signOutButton").style.display = "inline-block";
+
 
     createBudget.addEventListener("click", function () {
       const budgetNameSave = budgetName.value;
@@ -57,7 +56,6 @@ firebase.auth().onAuthStateChanged(function (user) {
     });
 
   } else {
-    document.getElementById("signInButton").style.display = "inline-block";
-    document.getElementById("signOutButton").style.display = "none";
+
   }
 });

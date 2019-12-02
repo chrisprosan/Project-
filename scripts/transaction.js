@@ -4,11 +4,11 @@ const addButton = document.querySelector("#addTransaction");
 const cancelButton = document.querySelector("cancel");
 const item = document.querySelector("#items");
 const cost = document.querySelector("#cost");
-const note = document.querySelector("#notes");
-const myBudget = document.querySelector("#activeBudget");
+// const myBudget = document.querySelector("#activeBudget");
 const add = document.querySelector("#plus");
 const addWindow = document.querySelector("#addTransactionWindow");
 const cancel = document.querySelector("#cancel");
+
 
 function checkTime(i) {
   if (i < 10) {
@@ -49,43 +49,41 @@ firebase.auth().onAuthStateChanged(function (user) {
       }
     });
 
-    document.getElementById("signInButton").style.display = "none";
-    document.getElementById("signOutButton").style.display = "inline-block";
+   
 
     addButton.addEventListener("click", function () {
       const itemSave = item.value;
       const costSave = cost.value;
-      const noteSave = note.value;
-      const myBudgetSave = myBudget.value;
+      // const myBudgetSave = myBudget.value;
       const timeStamp = new Date();
       transacRef.add({
         cost: parseInt(costSave),
         items: itemSave,
-        note: noteSave,
-        targetBudget: myBudgetSave,
+        // note: noteSave,
+        // targetBudget: myBudgetSave,
         time: timeStamp
       }).then(function () {
-        localStorage.setItem('budget', myBudgetSave);
         addWindow.style.display = "none";
         console.log("Log complete at " + new Date());
         alert("New Transaction Added");
-
+        location.reload();
       }).catch(function (error) {
         console.log("Error: ", error);
 
       });
     });
-    transacRef.onSnapshot(function (querySnapshot) {
+
+    var sortByTimeQuery = transacRef.orderBy("time", "desc");
+    var sortByCostQuery = transacRef.orderBy("cost", "desc");
+    if (document.getElementById)
+    sortByTimeQuery
+    .onSnapshot(function (querySnapshot) {
       var transaction = [];
       querySnapshot.forEach(function (doc) {
         transaction.push(doc.data());
 
       });
 
-      transaction.sort(function(a,b){
-        return new Date(b.time.toDate()) - new Date(a.time.toDate());
-      });
-      console.log(transaction);
       for (x in transaction) {
         let cost = transaction[x].cost;
         let items = transaction[x].items;
@@ -110,14 +108,13 @@ firebase.auth().onAuthStateChanged(function (user) {
         paraTimeStamp.html(h + ":" + m + ":" + s);
         paraDate.html(time.toDateString());
         paraItem.html(items);
-        divCost.html(cost);
+        divCost.html("$" + cost);
         divTransaction.append(paraTimeStamp, paraDate, paraItem, divCost);
         $("#spendingLog").append(divTransaction);
       }
     });
   } else {
-    document.getElementById("signInButton").style.display = "inline-block";
-    document.getElementById("signOutButton").style.display = "none";
+    
   }
 });
 
