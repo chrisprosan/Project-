@@ -55,11 +55,13 @@
         <p class="responsiveText">Transactions</p>
       </div>
     </a>
+    <a id="account" href="login.html">
     <div id="AccountsButton">
       <img src="images/personlogo.png" class="navImages blackenImage">
-      <p id="signInButton" class="responsiveText"><a href="login.html">Sign In</a></p>
-      <p id="signOutButton" class="responsiveText" onclick="signOut()"><a href="">Sign Out</a></p>
+      <p id="signInButton" class="responsiveText">Sign In</p>
+      <p id="signOutButton" class="responsiveText" onclick="signOut()">Sign Out</p>
     </div>
+  </a>
   </div>
   
   <div id="addTransactionWindow">
@@ -69,7 +71,7 @@
       <input class="addTransFieldInput" id="items" type="text" placeholder="What?">
 
       <p class="addTransFieldHeader">How Much Was It?</p>
-      <input class="addTransFieldInput" id="cost" type="text" placeholder="How Much?">
+      <input class="addTransFieldInput" id="cost" type="number" placeholder="How Much?">
       <div id="buttonField">
         <input id="addTransaction" type="button" class="button" value="Add Transaction!">
         <input id="cancel" type="button" class="button" value="Cancel">
@@ -78,8 +80,8 @@
   </div>
   
   <datalist id="sorting">
-    <option value="Recent">
-    <option value="Cost">
+    <option id="recent" value="Recent">
+    <option id="cost" value="Cost">
   </datalist>
   
   <datalist id="budgets">

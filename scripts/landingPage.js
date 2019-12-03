@@ -14,16 +14,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         email: email,
         name: displayName
       })
-      // var myBudget = localStorage.getItem("budget");
-      // if (myBudget != null) {
-      //   userRef.set({
-      //     activeBudget: myBudget
-      //   });
-      // } else {
-      //   userRef.set({
-      //     activeBudget: "none"
-      //   });
-      // }
+
       document.getElementById("welcomeText").innerHTML = "Welcome, " + displayName;
       // ...
     } else {
