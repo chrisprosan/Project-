@@ -169,6 +169,12 @@
   background-color: darkblue;
 }
 
+#activeBudgetDropdownContainer {
+  font-size: 0.25em;
+  display: none;
+  cursor: auto;
+}
+
 #createBudgetDropdownContainer {
   display: none;
 }
@@ -177,7 +183,23 @@
   display: none;
 }
 
-#activeBudgets {
+#tableGetRow {
+  display: grid;
+  grid-template-columns: auto;
+  text-align: center;
+  line-height: 1em;
+  font-size: 2em;
+}
+
+.gettingRow {
+}
+
+#activeBudgetsActualDropdown {
+  width: 50%;
+}
+
+#activeBudgetsHeader {
+  cursor: pointer;
 }
 
 .label {

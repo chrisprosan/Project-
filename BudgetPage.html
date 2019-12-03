@@ -29,9 +29,36 @@
     <!-- Active Budgets Selector -->
     <div id="activeBudgets">
       <div id="activeBudgetsHeader" class="dropdownHeader">
-        <input list="budgets" class="properDropdown" placeholder="Active Budget">
+        <input id="activeBudgetsActualDropdown" type="text" list="budgets" class="properDropdown" placeholder="Active Budget" oninput='onInput()'>
+        
+        <div id="activeBudgetDropdownContainer">
+          <div class="sideBySide dropdownHeader">
+          <p class="label">Budget Name</p>
+          <div id="budgetNameSelector">
+            <input id="budgetName" class="formSide" type="text" placeholder="~">
+          </div>
+        </div>
+        <div class="sideBySide dropdownHeader">
+          <p class="label">Time Interval (Weeks)</p>
+          <div id="timeIntervelSelector">
+            <input id="timeIntervel" class="formSide" type="text" placeholder="~">
+          </div>
+        </div>
+        <div class="sideBySide dropdownHeader">
+          <p class="label">Currency</p>
+          <div id="currencySelector">
+            <input id="currency" class="formSide" type="text" placeholder="~">
+          </div>
+        </div>
+        <div id="tableGetContent">
+          <div id="tableGetRow">
+            <p class="gettingRow">[1] Catagory: Groceries, Limit: 50, Warning: 90%</p>
+            <p class="gettingRow">[1] Catagory: Groceries, Limit: 50, Warning: 90%</p>
+            <p class="gettingRow">[1] Catagory: Groceries, Limit: 50, Warning: 90%</p>
+          </div>
+        </div>
       </div>
-    
+    </div>
   </div>
 
     <!-- Create A Budget Field -->
@@ -147,15 +174,15 @@
   </div>
   
   <datalist id="budgets">
-    <option value="Project X">
-    <option value="Project Y">
-    <option value="Project Z">
+    <option class="dataOption" value="Project X">
+    <option class="dataOption" value="Project Y">
+    <option class="dataOption" value="Project Z">
   </datalist>
   
   <datalist id="sorting">
-    <option value="Uses">
-    <option value="Views">
-    <option value="Ratings">
+    <option class="dataOption" value="Uses">
+    <option class="dataOption" value="Views">
+    <option class="dataOption" value="Ratings">
   </datalist>
   
   <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
@@ -190,6 +217,18 @@
         })
       }
       
+      function activeBudgets() {
+        document.getElementById("activeBudgetsHeader").addEventListener("click", function() {
+          if (document.getElementById("activeBudgetDropdownContainer").style.display == "block") {
+            console.log("Active Budget Widget Hidden");
+            document.getElementById("activeBudgetDropdownContainer").style.display = "none";
+          } else {
+            document.getElementById("activeBudgetDropdownContainer").style.display = "block";
+            console.log("Active Budget Widget Shown");
+          }
+        })
+      }
+      
       function appendRow() {
         document.getElementById("plus").addEventListener("click", function() {
           var row = document.createElement("div");
@@ -212,6 +251,18 @@
         })
       }
       
+      function onInput() {
+        var val = document.getElementById("activeBudgetsActualDropdown").value;
+        var opts = document.getElementById('budgets').childNodes;
+        for (var i = 0; i < opts.length; i++) {
+          if (opts[i].value === val) {
+            console.log("You chose: " + val);
+            break;
+          }
+        }
+      }
+      
+      activeBudgets();
       createBudgets();
       popularBudgets();
       appendRow();  

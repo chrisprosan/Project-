@@ -55,14 +55,14 @@ firebase.auth().onAuthStateChanged(function (user) {
     addButton.addEventListener("click", function () {
       const itemSave = item.value;
       const costSave = cost.value;
-      const noteSave = note.value;
-      const myBudgetSave = myBudget.value;
+//      const noteSave = note.value;
+//      const myBudgetSave = myBudget.value;
       const timeStamp = new Date();
       transacRef.add({
         cost: parseInt(costSave),
         items: itemSave,
-        note: noteSave,
-        targetBudget: myBudgetSave,
+//        note: noteSave,
+//        targetBudget: myBudgetSave,
         time: timeStamp
       }).then(function () {
         localStorage.setItem('budget', myBudgetSave);
