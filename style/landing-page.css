@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Lobster|Roboto|Staatliches|Teko&display=swap');
 
-html, body {
+html,
+body {
   margin: 0px;
   padding: 0px;
 
@@ -162,7 +163,7 @@ a:hover {
 
 @media screen and (max-width: 300px) {
   .responsiveText {
-   font-size: 0.6em; 
+    font-size: 0.6em;
   }
 }
 

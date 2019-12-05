@@ -10,14 +10,14 @@ firebase.auth().onAuthStateChanged(function (user) {
     var uid = user.uid;
 
     account.setAttribute("href", "javascript:void(0);");
-    account.setAttribute("onclick" ,"signOut()");
+    account.setAttribute("onclick", "signOut()");
 
     document.getElementById("signInButton").style.display = "none";
     document.getElementById("signOutButton").style.display = "inline-block";
     // ...
   } else {
     account.setAttribute("href", "login.html");
-    account.setAttribute("onclick" ,"");
+    account.setAttribute("onclick", "");
     document.getElementById("signInButton").style.display = "inline-block";
     document.getElementById("signOutButton").style.display = "none";
   }

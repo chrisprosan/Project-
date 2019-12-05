@@ -48,18 +48,19 @@ firebase.auth().onAuthStateChanged(function (user) {
       }
     });
 
-   
+
 
     addButton.addEventListener("click", function () {
       const itemSave = item.value;
       const costSave = cost.value;
-      // const myBudgetSave = myBudget.value;
+      //      const noteSave = note.value;
+      //      const myBudgetSave = myBudget.value;
       const timeStamp = new Date();
       transacRef.add({
         cost: parseInt(costSave),
         items: itemSave,
-        // note: noteSave,
-        // targetBudget: myBudgetSave,
+        //        note: noteSave,
+        //        targetBudget: myBudgetSave,
         time: timeStamp
       }).then(function () {
         addWindow.style.display = "none";
@@ -156,31 +157,31 @@ firebase.auth().onAuthStateChanged(function (user) {
   }
     
   } else {
-    
+
   }
 });
 
 function popupWindow() {
-document.getElementById("plus").addEventListener("click", function () {
-  if (document.getElementById("addTransactionWindow").style.display == "block") {
-    document.getElementById("nonTransWindow").className -= "darken";
-    document.getElementById("addTransactionWindow").style.display = "none";
-    console.log("Add Transaction Menu Hidden");
-  } else {
-    document.getElementById("nonTransWindow").className += "darken";
-    document.getElementById("addTransactionWindow").style.display = "block";
-    console.log("Add Transaction Menu Displayed");
-  }
-})
+  document.getElementById("plus").addEventListener("click", function () {
+    if (document.getElementById("addTransactionWindow").style.display == "block") {
+      document.getElementById("nonTransWindow").className -= "darken";
+      document.getElementById("addTransactionWindow").style.display = "none";
+      console.log("Add Transaction Menu Hidden");
+    } else {
+      document.getElementById("nonTransWindow").className += "darken";
+      document.getElementById("addTransactionWindow").style.display = "block";
+      console.log("Add Transaction Menu Displayed");
+    }
+  })
 
-document.getElementById("cancel").addEventListener("click", function () {
-  if (document.getElementById("addTransactionWindow").style.display == "block") {
-    console.log("Add Transaction Menu Hidden");
-    document.getElementById("addTransactionWindow").style.display = "none";
-  } else {
-    document.getElementById("addTransactionWindow").style.display = "block";
-    document.getElementById("nonTransWindow").className = "";
-    console.log("Add Transaction Menu Displayed");
-  }
-})
+  document.getElementById("cancel").addEventListener("click", function () {
+    if (document.getElementById("addTransactionWindow").style.display == "block") {
+      console.log("Add Transaction Menu Hidden");
+      document.getElementById("addTransactionWindow").style.display = "none";
+    } else {
+      document.getElementById("addTransactionWindow").style.display = "block";
+      document.getElementById("nonTransWindow").className = "";
+      console.log("Add Transaction Menu Displayed");
+    }
+  })
 };
