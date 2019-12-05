@@ -50,15 +50,19 @@
 #spendingLogHeader {
   text-align: center;
   font-size: 1.2em;
+  width: 45vw;
 }
 
-#filter {}
+#filter {
+  margin-left: 3vw;
+  margin-right: 3vw;
+}
 
 #sort {
   font-size: 1em;
   font-family: "Josefin Sans", sans-serif;
 
-  width: 15vw;
+  width: 30vw;
 
   vertical-align: bottom;
   line-height: 20px;
@@ -151,7 +155,7 @@
   grid-template-columns: auto auto;
   
   margin-top: 6%;
-  margin-bottom: 6%;
+  margin-bottom: 6%;  
 }
 
 #cancel {}
