@@ -35,7 +35,7 @@
         <img id="plus" src="images/plus.png">
         <p id="spendingLogHeader">Spending Log</p>
         <form id="filter">
-          <input list="sorting" class="properDropdown" placeholder="Sort By" style="padding-left: 0.25em;">
+          <input id="sort" list="sorting" oninput="onInput()" class="properDropdown" placeholder="Sort By" style="padding-left: 0.25em;">
         </form>
       </div>
       <div id="spendingLog"></div>
@@ -89,7 +89,6 @@
     <option value="Project Y">
     <option value="Project Z">
   </datalist>
-  
   <script src="https://unpkg.com/moment"></script>
   <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
   <script src="./scripts/app-config.js"></script>

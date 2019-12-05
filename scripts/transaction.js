@@ -16,7 +16,6 @@ function checkTime(i) {
   }
   return i;
 }
-
 firebase.auth().onAuthStateChanged(function (user) {
   if (user != null) {
     // User is signed in.
@@ -75,44 +74,87 @@ firebase.auth().onAuthStateChanged(function (user) {
 
     var sortByTimeQuery = transacRef.orderBy("time", "desc");
     var sortByCostQuery = transacRef.orderBy("cost", "desc");
-    if (document.getElementById)
-    sortByTimeQuery
-    .onSnapshot(function (querySnapshot) {
-      var transaction = [];
-      querySnapshot.forEach(function (doc) {
-        transaction.push(doc.data());
 
+    window.onInput = function() {
+      if (document.getElementById("sort").value == "Recent") {
+      sortByTimeQuery
+      .onSnapshot(function (querySnapshot) {
+        var transaction = [];
+        querySnapshot.forEach(function (doc) {
+          transaction.push(doc.data());
+  
+        });
+  
+        for (x in transaction) {
+          let cost = transaction[x].cost;
+          let items = transaction[x].items;
+          // let note = transaction[x].note;
+          // let targetBudget = transaction[x].targetBudget;
+          var time = transaction[x].time.toDate();
+          var h = time.getHours();
+          var m = time.getMinutes();
+          var s = time.getSeconds();
+  
+          h = checkTime(h);
+          m = checkTime(m);
+          s = checkTime(s);
+  
+          var divTransaction = $("<div class='transaction'></div>");
+          var paraTimeStamp = $("<p class='timestamp'></p>");
+          var paraDate = $("<p class='date'></p>");
+          var paraItem = $("<p class='itemPurchased'></p>");
+          var divCost = $("<div class='costAssociated'></div>");
+  
+  
+          paraTimeStamp.html(h + ":" + m + ":" + s);
+          paraDate.html(time.toDateString());
+          paraItem.html(items);
+          divCost.html("$" + cost);
+          divTransaction.append(paraTimeStamp, paraDate, paraItem, divCost);
+          $("#spendingLog").append(divTransaction);
+        }
       });
-
-      for (x in transaction) {
-        let cost = transaction[x].cost;
-        let items = transaction[x].items;
-        // let note = transaction[x].note;
-        // let targetBudget = transaction[x].targetBudget;
-        var time = transaction[x].time.toDate();
-        var h = time.getHours();
-        var m = time.getMinutes();
-        var s = time.getSeconds();
-
-        h = checkTime(h);
-        m = checkTime(m);
-        s = checkTime(s);
-
-        var divTransaction = $("<div class='transaction'></div>");
-        var paraTimeStamp = $("<p class='timestamp'></p>");
-        var paraDate = $("<p class='date'></p>");
-        var paraItem = $("<p class='itemPurchased'></p>");
-        var divCost = $("<div class='costAssociated'></div>");
-
-
-        paraTimeStamp.html(h + ":" + m + ":" + s);
-        paraDate.html(time.toDateString());
-        paraItem.html(items);
-        divCost.html("$" + cost);
-        divTransaction.append(paraTimeStamp, paraDate, paraItem, divCost);
-        $("#spendingLog").append(divTransaction);
-      }
-    });
+    } else if (document.getElementById("sort").value == "Cost") {
+      sortByCostQuery
+      .onSnapshot(function (querySnapshot) {
+        var transaction = [];
+        querySnapshot.forEach(function (doc) {
+          transaction.push(doc.data());
+  
+        });
+  
+        for (x in transaction) {
+          let cost = transaction[x].cost;
+          let items = transaction[x].items;
+          // let note = transaction[x].note;
+          // let targetBudget = transaction[x].targetBudget;
+          var time = transaction[x].time.toDate();
+          var h = time.getHours();
+          var m = time.getMinutes();
+          var s = time.getSeconds();
+  
+          h = checkTime(h);
+          m = checkTime(m);
+          s = checkTime(s);
+  
+          var divTransaction = $("<div class='transaction'></div>");
+          var paraTimeStamp = $("<p class='timestamp'></p>");
+          var paraDate = $("<p class='date'></p>");
+          var paraItem = $("<p class='itemPurchased'></p>");
+          var divCost = $("<div class='costAssociated'></div>");
+  
+  
+          paraTimeStamp.html(h + ":" + m + ":" + s);
+          paraDate.html(time.toDateString());
+          paraItem.html(items);
+          divCost.html("$" + cost);
+          divTransaction.append(paraTimeStamp, paraDate, paraItem, divCost);
+          $("#spendingLog").append(divTransaction);
+        }
+      });
+    }
+  }
+    
   } else {
     
   }
