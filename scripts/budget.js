@@ -51,11 +51,18 @@ firebase.auth().onAuthStateChanged(function (user) {
     createBudget.addEventListener("click", function () {
       const budgetNameSave = budgetName.value;
       const timeIntervelSave = timeIntervel.value;
-      const currencySave = currency.value;
+      let currencySave = currency.value;
       const addCategorySave = addCategory.value;
       const limitSave = limit.value;
       const notificationSave = notification.value;
-
+      
+      // CAD Default
+      if (currencySave == "") {
+          currencySave = "CAD";
+        
+        console.log(currencySave);
+      }
+      
       budgetRef.add({
         budget: budgetNameSave,
         timeIntervel: timeIntervelSave,

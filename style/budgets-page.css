@@ -190,7 +190,10 @@
   grid-template-columns: auto;
   text-align: center;
   line-height: 1em;
-  font-size: 2em;
+  font-size: 4.5em;
+  font-family: "Josefin Sans", serif;
+  background-color: white;
+  border: 1px solid black;
 }
 
 #activeBudgetsActualDropdown {
@@ -200,6 +203,22 @@
 
 #activeBudgetsHeader {
   cursor: pointer;
+}
+
+#budgetNameSelectorShow {
+  font-size: 2em;
+}
+
+#timeIntervelSelectorShow {
+  font-size: 2em;
+}
+
+#currencySelectorShow {
+  font-size: 2em;
+}
+
+.bigText {
+  font-size: 2em;
 }
 
 .label {
@@ -259,7 +278,7 @@
 }
 
 #plus {
-  width: 8vh;
+  width: 8%;
   float: right;
   border: 1px solid black;
   margin-right: 3%;
