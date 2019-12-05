@@ -13,9 +13,7 @@
 </head>
 
 <body>
-  <!-- Holds everything other than the "add a transaction" window -->
   <div id="nonTransWindow" class="">
-    <!-- Header -->
     <div id="container">
       <div id="parent_div" class="parentElement">
         <div id="header" class="childElement">
@@ -32,19 +30,15 @@
       </div>
     </div>
 
-    <!-- Main Body -->
     <div id="content">
       <div id="title">
-        
+        <img id="plus" src="images/plus.png">
         <p id="spendingLogHeader">Spending Log</p>
         <form id="filter">
           <input list="sorting" class="properDropdown" placeholder="Sort By" style="padding-left: 0.25em;">
         </form>
-        <img id="plus" src="images/plus.png">
       </div>
-      
       <div id="spendingLog"></div>
-      
     </div>
   </div>
 
@@ -70,7 +64,6 @@
     </a>
   </div>
 
-  <!-- Add a transaction window, position is absolute so outside of container -->
   <div id="addTransactionWindow">
     <p id="addTransHeader">Create A Transaction!</p>
     <form>
@@ -86,7 +79,6 @@
     </form>
   </div>
 
-  <!-- Data Lists -->
   <datalist id="sorting">
     <option id="recent" value="Recent">
     <option id="cost" value="Cost">

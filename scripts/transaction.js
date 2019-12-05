@@ -49,19 +49,19 @@ firebase.auth().onAuthStateChanged(function (user) {
       }
     });
 
-   
+
 
     addButton.addEventListener("click", function () {
       const itemSave = item.value;
       const costSave = cost.value;
-//      const noteSave = note.value;
-//      const myBudgetSave = myBudget.value;
+      //      const noteSave = note.value;
+      //      const myBudgetSave = myBudget.value;
       const timeStamp = new Date();
       transacRef.add({
         cost: parseInt(costSave),
         items: itemSave,
-//        note: noteSave,
-//        targetBudget: myBudgetSave,
+        //        note: noteSave,
+        //        targetBudget: myBudgetSave,
         time: timeStamp
       }).then(function () {
         addWindow.style.display = "none";
@@ -77,69 +77,69 @@ firebase.auth().onAuthStateChanged(function (user) {
     var sortByTimeQuery = transacRef.orderBy("time", "desc");
     var sortByCostQuery = transacRef.orderBy("cost", "desc");
     if (document.getElementById)
-    sortByTimeQuery
-    .onSnapshot(function (querySnapshot) {
-      var transaction = [];
-      querySnapshot.forEach(function (doc) {
-        transaction.push(doc.data());
+      sortByTimeQuery
+      .onSnapshot(function (querySnapshot) {
+        var transaction = [];
+        querySnapshot.forEach(function (doc) {
+          transaction.push(doc.data());
 
+        });
+
+        for (x in transaction) {
+          let cost = transaction[x].cost;
+          let items = transaction[x].items;
+          // let note = transaction[x].note;
+          // let targetBudget = transaction[x].targetBudget;
+          var time = transaction[x].time.toDate();
+          var h = time.getHours();
+          var m = time.getMinutes();
+          var s = time.getSeconds();
+
+          h = checkTime(h);
+          m = checkTime(m);
+          s = checkTime(s);
+
+          var divTransaction = $("<div class='transaction'></div>");
+          var paraTimeStamp = $("<p class='timestamp'></p>");
+          var paraDate = $("<p class='date'></p>");
+          var paraItem = $("<p class='itemPurchased'></p>");
+          var divCost = $("<div class='costAssociated'></div>");
+
+
+          paraTimeStamp.html(h + ":" + m + ":" + s);
+          paraDate.html(time.toDateString());
+          paraItem.html(items);
+          divCost.html("$" + cost);
+          divTransaction.append(paraTimeStamp, paraDate, paraItem, divCost);
+          $("#spendingLog").append(divTransaction);
+        }
       });
-
-      for (x in transaction) {
-        let cost = transaction[x].cost;
-        let items = transaction[x].items;
-        // let note = transaction[x].note;
-        // let targetBudget = transaction[x].targetBudget;
-        var time = transaction[x].time.toDate();
-        var h = time.getHours();
-        var m = time.getMinutes();
-        var s = time.getSeconds();
-
-        h = checkTime(h);
-        m = checkTime(m);
-        s = checkTime(s);
-
-        var divTransaction = $("<div class='transaction'></div>");
-        var paraTimeStamp = $("<p class='timestamp'></p>");
-        var paraDate = $("<p class='date'></p>");
-        var paraItem = $("<p class='itemPurchased'></p>");
-        var divCost = $("<div class='costAssociated'></div>");
-
-
-        paraTimeStamp.html(h + ":" + m + ":" + s);
-        paraDate.html(time.toDateString());
-        paraItem.html(items);
-        divCost.html("$" + cost);
-        divTransaction.append(paraTimeStamp, paraDate, paraItem, divCost);
-        $("#spendingLog").append(divTransaction);
-      }
-    });
   } else {
-    
+
   }
 });
 
 function popupWindow() {
-document.getElementById("plus").addEventListener("click", function () {
-  if (document.getElementById("addTransactionWindow").style.display == "block") {
-    document.getElementById("nonTransWindow").className -= "darken";
-    document.getElementById("addTransactionWindow").style.display = "none";
-    console.log("Add Transaction Menu Hidden");
-  } else {
-    document.getElementById("nonTransWindow").className += "darken";
-    document.getElementById("addTransactionWindow").style.display = "block";
-    console.log("Add Transaction Menu Displayed");
-  }
-})
+  document.getElementById("plus").addEventListener("click", function () {
+    if (document.getElementById("addTransactionWindow").style.display == "block") {
+      document.getElementById("nonTransWindow").className -= "darken";
+      document.getElementById("addTransactionWindow").style.display = "none";
+      console.log("Add Transaction Menu Hidden");
+    } else {
+      document.getElementById("nonTransWindow").className += "darken";
+      document.getElementById("addTransactionWindow").style.display = "block";
+      console.log("Add Transaction Menu Displayed");
+    }
+  })
 
-document.getElementById("cancel").addEventListener("click", function () {
-  if (document.getElementById("addTransactionWindow").style.display == "block") {
-    console.log("Add Transaction Menu Hidden");
-    document.getElementById("addTransactionWindow").style.display = "none";
-  } else {
-    document.getElementById("addTransactionWindow").style.display = "block";
-    document.getElementById("nonTransWindow").className = "";
-    console.log("Add Transaction Menu Displayed");
-  }
-})
+  document.getElementById("cancel").addEventListener("click", function () {
+    if (document.getElementById("addTransactionWindow").style.display == "block") {
+      console.log("Add Transaction Menu Hidden");
+      document.getElementById("addTransactionWindow").style.display = "none";
+    } else {
+      document.getElementById("addTransactionWindow").style.display = "block";
+      document.getElementById("nonTransWindow").className = "";
+      console.log("Add Transaction Menu Displayed");
+    }
+  })
 };

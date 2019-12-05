@@ -12,8 +12,8 @@
   background-color: #f9f9f9;
 
   min-width: 50%;
-  
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 8px 12px;
   z-index: 1;
   list-style-type: none;
@@ -32,7 +32,7 @@
   border: 1px solid black;
 
   font-family: "Josefin Sans", sans-serif;
-  font-size: 2.25em;  
+  font-size: 2.25em;
 
   padding: 2%;
   display: grid;
@@ -44,18 +44,15 @@
   height: 128px;
   border: 1px solid black;
   
-  margin-right: 1vw;
+  float: right;
 }
 
 #spendingLogHeader {
-text-align: center;
+  text-align: center;
   font-size: 1.2em;
-  margin-left: 1vw;
-  margin-right: 1vw;
 }
 
-#filter {
-}
+#filter {}
 
 #sort {
   font-size: 1em;
@@ -90,31 +87,28 @@ text-align: center;
 }
 
 .costAssociated {
- float: right; 
+  float: right;
 
   font-size: 1.2em;
 }
 
 .itemPurchased {
-  float: left; 
+  float: left;
   font-size: 1.2em;
 }
 
 #addTransactionWindow {
   padding-left: 5%;
   padding-right: 5%;
-  padding-bottom: 2%;
-  
+
   background-color: white;
   border: 2px solid black;
   font-size: 1.25em;
   position: absolute;
   top: 0;
-  bottom: 0;
   left: 15vw;
   right: 15vw;
-  height: 65vh;
-  
+
   display: none;
 }
 
@@ -132,13 +126,12 @@ text-align: center;
 
 .addTransFieldInput {
   font-size: 1.125em;
-  
+
   line-height: 50%;
 }
 
-.button {
+.button {;
   padding: 6%;
-  display: inline-block;
 
   background-color: white;
   border: 1px solid black;
@@ -151,22 +144,17 @@ text-align: center;
   font-family: "Josefin Sans", sans-serif;
 
   cursor: pointer;
-  
 }
 
 #buttonField {
   display: grid;
   grid-template-columns: auto auto;
-  position: relative;
-  top: 50%;
-  transform: translateY(50%);
+  margin: 6%;
 }
 
-#cancel {
-}
+#cancel {}
 
-#nonTransWindow {
-}
+#nonTransWindow {}
 
 .darken {
   filter: brightness(20%);
@@ -178,7 +166,7 @@ text-align: center;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-  
+
   font-size: 1.25em;
   overflow-x: scroll;
 }
@@ -186,3 +174,4 @@ text-align: center;
 #AccountsButton:hover {
   cursor: pointer;
 }
+

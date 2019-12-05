@@ -38,19 +38,19 @@
           <div class="sideBySide dropdownHeader">
             <p class="label">Budget Name</p>
             <div id="budgetNameSelectorShow">
-              <input id="budgetNameShow" class="formSide" type="text" placeholder="Budget Name">
+              <input id="budgetNameShow" class="formSide" type="text" placeholder="~">
             </div>
           </div>
           <div class="sideBySide dropdownHeader">
             <p class="label">Time Interval (Weeks)</p>
             <div id="timeIntervelSelectorShow">
-              <input id="timeIntervelShow" class="formSide" type="text" placeholder="Time Intervel">
+              <input id="timeIntervelShow" class="formSide" type="text" placeholder="~">
             </div>
           </div>
           <div class="sideBySide dropdownHeader">
             <p class="label">Currency</p>
             <div id="currencySelectorShow">
-              <input id="currencyShow" class="formSide" type="text" placeholder="Currency">
+              <input id="currencyShow" class="formSide" type="text" placeholder="~">
             </div>
           </div>
           <div id="tableGetContent">
@@ -104,9 +104,8 @@
                 <input id="limit" class="headerCell cell limit" placeholder="Limit" required="required">
                 <input id="notify" class="headerCell cell notify" placeholder="Warning At" required="required">
               </div>
-              
+              <img src="images/plus.png" id="plus">
             </div>
-            <img src="images/plus.png" id="plus">
             <input type="button" id="createBudgetButton" value="Create Budget">
           </div>
         </form>
@@ -254,7 +253,7 @@
 
         var notif = document.createElement("input");
         notif.setAttribute("class", "headerCell cell");
-        notif.setAttribute("placeholder", "Warning At");
+        notif.setAttribute("placeholder", "Notify Me At");
 
         $(".row").last().after(row);
         $(".row").last().append(catagory, limit, notif);

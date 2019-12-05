@@ -22,8 +22,6 @@ firebase.auth().onAuthStateChanged(function (user) {
     var userBudgetRef = userRef.collection("budget");
     var budgetRef = db.collection("budgets");
 
-
-
     createBudget.addEventListener("click", function () {
       const budgetNameSave = budgetName.value;
       const timeIntervelSave = timeIntervel.value;
@@ -45,7 +43,9 @@ firebase.auth().onAuthStateChanged(function (user) {
           notification: notificationSave
         });
 
-        
+        console.log("Name: " + budgetNameSave);
+        console.log("Intervel: " + timeIntervelSave);
+        console.log("Currency: " + currencySave);
 
         console.log("Log complete");
         document.getElementById("createBudgetDropdownContainer").style.display = "none";
