@@ -21,7 +21,33 @@ firebase.auth().onAuthStateChanged(function (user) {
     var userRef = db.collection("users").doc(uid);
     var userBudgetRef = userRef.collection("budget");
     var budgetRef = db.collection("budgets");
+    var sortByName = userBudgetRef.orderBy("budget", "asc");
 
+    window.onInput = function () {
+      sortByName.onSnapshot(function (querySnapshot) {
+        var budgetArray = [];
+        querySnapshot.forEach(function (doc) {
+          budgetArray.push(doc.data());
+  
+        });
+        console.log(budgetArray);
+        for (x in budgetArray) {
+          var optionX = $("<option class='dataOption' value=''>");
+          optionX.attr("value", budgetArray[x].budget);
+          console.log(optionX);
+          console.log(budgetArray[x].budget);
+          $("#budgetNameShow").html(budgetArray[x].budget);
+          var val = document.getElementById("activeBudgetsActualDropdown").value;
+          var opts = document.getElementById('budgets').childNodes;
+          for (var i = 0; i < opts.length; i++) {
+            if (opts[i].value === val) {
+              console.log("You chose: " + val);
+              break;
+            }
+          }
+        }
+      });
+    }
     createBudget.addEventListener("click", function () {
       const budgetNameSave = budgetName.value;
       const timeIntervelSave = timeIntervel.value;
@@ -43,6 +69,30 @@ firebase.auth().onAuthStateChanged(function (user) {
         currency: currencySave,
       }).then(function (docRef) {
         var rowsRef = budgetRef.doc(docRef.id).collection("rows");
+
+        rowsRef.add({
+          category: addCategorySave,
+          llimit: limitSave,
+          notification: notificationSave
+        });
+
+        console.log("Name: " + budgetNameSave);
+        console.log("Intervel: " + timeIntervelSave);
+        console.log("Currency: " + currencySave);
+
+        console.log("Log complete");
+        document.getElementById("createBudgetDropdownContainer").style.display = "none";
+      }).catch(function (error) {
+        console.log("Error: ", error);
+
+      });
+
+      userBudgetRef.add({
+        budget: budgetNameSave,
+        timeIntervel: timeIntervelSave,
+        currency: currencySave,
+      }).then(function (docRef) {
+        var rowsRef = userBudgetRef.doc(docRef.id).collection("rows");
 
         rowsRef.add({
           category: addCategorySave,

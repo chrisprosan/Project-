@@ -39,13 +39,13 @@
           <div class="sideBySide dropdownHeader">
             <p class="label bigText">Budget Name</p>
             <div id="budgetNameSelectorShow">
-              <input id="budgetNameShow" class="formSide" type="text" placeholder="Budget Name">
+              <input id="budgetNameShow" class="formSide" type="text" placeholder="">
             </div>
           </div>
           <div class="sideBySide dropdownHeader">
             <p class="label bigText">Time Interval (Weeks)</p>
             <div id="timeIntervelSelectorShow">
-              <input id="timeIntervelShow" class="formSide" type="text" placeholder="Time Intervel">
+              <input id="timeIntervelShow" class="formSide" type="text" placeholder="Time Interval">
             </div>
           </div>
           <div class="sideBySide dropdownHeader">
@@ -262,16 +262,16 @@
     }
 
     // Function for grabbing the value inputted into Active Budget selection.
-    function onInput() {
-      var val = document.getElementById("activeBudgetsActualDropdown").value;
-      var opts = document.getElementById('budgets').childNodes;
-      for (var i = 0; i < opts.length; i++) {
-        if (opts[i].value === val) {
-          console.log("You chose: " + val);
-          break;
-        }
-      }
-    }
+    // function onInput() {
+    //   var val = document.getElementById("activeBudgetsActualDropdown").value;
+    //   var opts = document.getElementById('budgets').childNodes;
+    //   for (var i = 0; i < opts.length; i++) {
+    //     if (opts[i].value === val) {
+    //       console.log("You chose: " + val);
+    //       break;
+    //     }
+    //   }
+    // }
 
     activeBudgets();
     createBudgets();
