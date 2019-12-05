@@ -31,7 +31,7 @@ firebase.auth().onAuthStateChanged(function (user) {
   
         });
         console.log(budgetArray);
-        for (x in budgetArray) {
+        for (var x = 0; x < 1; x++) {
           var optionX = $("<option class='dataOption' value=''>");
           optionX.attr("value", budgetArray[x].budget);
           console.log(optionX);
