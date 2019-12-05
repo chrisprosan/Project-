@@ -8,11 +8,13 @@ firebase.auth().onAuthStateChanged(function (user) {
     var emailVerified = user.emailVerified;
     var isAnonymous = user.isAnonymous;
     var uid = user.uid;
+    var timestamp = new Date();
 
     var userRef = db.collection("users").doc(uid);
     userRef.set({
       email: email,
-      name: displayName
+      name: displayName,
+      timestamp: timestamp
     })
 
     document.getElementById("welcomeText").innerHTML = "Welcome, " + displayName;

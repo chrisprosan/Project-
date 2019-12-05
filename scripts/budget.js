@@ -31,7 +31,7 @@ firebase.auth().onAuthStateChanged(function (user) {
   
         });
         console.log(budgetArray);
-        for (x in budgetArray) {
+        for (var x = 0; x < 1; x++) {
           var val = document.getElementById("activeBudgetsActualDropdown").value;
           var opts = document.getElementById('budgets').childNodes;
           for (var i = 0; i < opts.length; i++) {
@@ -65,7 +65,7 @@ firebase.auth().onAuthStateChanged(function (user) {
 
         rowsRef.add({
           category: addCategorySave,
-          llimit: limitSave,
+          limit: limitSave,
           notification: notificationSave
         });
 
