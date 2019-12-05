@@ -32,14 +32,14 @@ firebase.auth().onAuthStateChanged(function (user) {
         });
         console.log(budgetArray);
         for (x in budgetArray) {
-          var optionX = $("<option class='dataOption' value=''>");
-          optionX.attr("value", budgetArray[x].budget);
-          console.log(optionX);
-          console.log(budgetArray[x].budget);
-          $("#budgetNameShow").html(budgetArray[x].budget);
           var val = document.getElementById("activeBudgetsActualDropdown").value;
           var opts = document.getElementById('budgets').childNodes;
           for (var i = 0; i < opts.length; i++) {
+          $("#budgetNameShow").val(budgetArray[x].budget);
+          $("#timeIntervelShow").val(budgetArray[x].timeIntervel);
+          $("#currencyShow").val(budgetArray[x].currency);
+          var row = $("<p class='gettingRow'></p>")
+          row.html()
             if (opts[i].value === val) {
               console.log("You chose: " + val);
               break;
